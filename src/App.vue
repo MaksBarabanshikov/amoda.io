@@ -14,3 +14,34 @@
     </v-main>
   </v-app>
 </template>
+
+<style>
+  @font-face {
+    font-family: 'Commissioner';
+    font-weight: 400;
+    font-style: normal;
+    src: local('Commissioner'),
+      url(./assets/fonts/Commissioner-Regular.ttf) format('truetype');
+  }
+  @font-face {
+    font-family: 'Commissioner';
+    font-weight: 500;
+    font-style: normal;
+    src: local('Commissioner'),
+      url(./assets/fonts/Commissioner-Medium.ttf) format('truetype');
+  }
+  @font-face {
+    font-family: 'Commissioner';
+    font-weight: 600;
+    font-style: normal;
+    src: local('Commissioner'),
+      url(./assets/fonts/Commissioner-Bold.ttf) format('truetype');
+  }
+  @font-face {
+    font-family: 'Commissioner';
+    font-weight: 700;
+    font-style: normal;
+    src: local('Commissioner'),
+      url(./assets/fonts/Commissioner-ExtraBold.ttf) format('truetype');
+  }
+</style>

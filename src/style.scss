@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: "Commissioner", sans-serif;
+  font-weight: 400;
+}
+
+header {
+  font-weight: 500;
+}
+
+.v-breadcrumbs {
+  font-size: 13px;
+  color: #5F5F5F;
+  padding-left: 0 !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  @apply text-dark;
+}
+
+.primary-gradient {
+  background: linear-gradient(210.64deg, #2485fd 6.88%, #1859fe 91.15%), #2653f2 !important;
+}
