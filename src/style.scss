@@ -5,6 +5,7 @@
 body {
   font-family: 'Commissioner', sans-serif;
   font-weight: 400;
+  background: #f9f9f9 !important;
 }
 
 header {
@@ -29,4 +30,17 @@ h6 {
 
 .primary-gradient {
   background: linear-gradient(210.64deg, #2485fd 6.88%, #1859fe 91.15%), #2653f2 !important;
+}
+
+.green-gradient {
+  background: linear-gradient(210.64deg, #52cf5c 6.88%, #2bb641 91.15%), #2653f2 !important;
+}
+
+
+.bg-gray {
+  background: #E2E2E2 !important;
+}
+
+.v-container {
+  max-width: 1300px !important;
 }

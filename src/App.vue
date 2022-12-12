@@ -4,7 +4,7 @@
 </script>
 
 <template>
-  <v-app class="bg-gray">
+  <v-app theme="">
     <v-header />
     <v-main>
       <v-container>
