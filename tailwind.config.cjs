@@ -8,7 +8,7 @@ module.exports = {
       blue: '#2653F2',
       dblue: '#1859FE',
       gray: '#F9F9F9',
-      dark: '#2E2E2E'
+      dark: '#2E2E2E',
     },
     borderRadius: {
       none: '0',
