@@ -12,9 +12,7 @@
       <span>Antalya, Alanya, Avsallar</span>
     </div>
     <v-row class="relative">
-      <v-col cols="9">
-        <card-content />
-      </v-col>
+      <card-content />
       <sticky-johny />
     </v-row>
   </section>
