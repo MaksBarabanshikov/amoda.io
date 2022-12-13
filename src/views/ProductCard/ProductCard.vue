@@ -1,6 +1,7 @@
 <script setup>
   import StickyJohny from '@/views/ProductCard/StickyJohny.vue';
   import CardContent from '@/views/ProductCard/CardContent.vue';
+  import CarouselOffers from '@/views/ProductCard/CarouselOffers.vue';
 </script>
 <template>
   <section class="product-card">
@@ -16,6 +17,7 @@
       <sticky-johny />
     </v-row>
   </section>
+  <carousel-offers />
 </template>
 
 <style lang="scss">
