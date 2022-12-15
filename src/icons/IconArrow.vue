@@ -1,7 +1,4 @@
 <script setup>
-  import prev from '@/assets/img/icons/prev.svg';
-  import next from '@/assets/img/icons/next.svg';
-
   defineProps({
     type: String,
   });
@@ -9,10 +6,39 @@
 
 <template>
   <template v-if="type === 'next'">
-    <img :src="next" :alt="type" />
+    <div class="arrow arrow-next" />
   </template>
 
   <template v-if="type === 'prev'">
-    <img :src="prev" :alt="type" />
+    <div class="arrow arrow-prev" />
   </template>
 </template>
+
+<style lang="scss">
+  .arrow-prev {
+    width: 7px;
+    height: 13px;
+    -webkit-mask: url('../assets/img/icons/prev.svg') no-repeat center;
+    mask: url('../assets/img/icons/prev.svg') no-repeat center;
+  }
+
+  .arrow-next {
+    width: 7px;
+    height: 13px;
+    -webkit-mask: url('../assets/img/icons/next.svg') no-repeat center;
+    mask: url('../assets/img/icons/next.svg') no-repeat center;
+  }
+
+  .white-arrow {
+    .arrow {
+      background-color: #fff;
+    }
+  }
+
+  .blue-arrow {
+    .arrow {
+      transition: all 0.15s ease-in-out;
+      background-color: #1f74fd;
+    }
+  }
+</style>

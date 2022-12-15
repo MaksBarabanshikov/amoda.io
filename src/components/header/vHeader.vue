@@ -2,8 +2,7 @@
   import VLogo from '@/icons/VLogo.vue';
   import VNav from '@/components/header/vNav.vue';
   import HeaderButtons from '@/components/header/HeaderButtons.vue';
-
-  const navItems = ['Аренда', 'Продажа', 'Новостройки', 'Коммерческая'];
+  import { navItems } from '@/helper/index.js';
 </script>
 
 <template>

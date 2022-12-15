@@ -1,6 +1,7 @@
 <script setup>
   import VHeader from '@/components/header/vHeader.vue';
   import ProductCard from '@/views/ProductCard/ProductCard.vue';
+  import MyFooter from '@/components/footer/MyFooter.vue';
 </script>
 
 <template>
@@ -12,6 +13,7 @@
         <product-card />
       </v-container>
     </v-main>
+    <my-footer />
   </v-app>
 </template>
 
