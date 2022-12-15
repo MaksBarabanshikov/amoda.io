@@ -40,10 +40,7 @@
     </template>
     <v-carousel-item v-for="(slide, i) in slides" :key="i">
       <v-sheet height="100%">
-        <v-img :src="slideExample"> </v-img>
-        <div class="d-flex fill-height justify-center align-center">
-          <div class="text-h2">{{ slide }} Slide</div>
-        </div>
+        <v-img :src="slideExample" />
       </v-sheet>
     </v-carousel-item>
   </v-carousel>
