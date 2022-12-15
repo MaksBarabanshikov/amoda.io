@@ -10,7 +10,7 @@
     <v-container class="d-flex align-center">
       <v-row class="justify-space-between">
         <v-col cols="2">
-          <span>© 2022 Amoda.io </span>
+          <span>© 2022 Amoda.io хуй </span>
         </v-col>
         <v-col cols="4">
           <v-nav :items="navItems" />
