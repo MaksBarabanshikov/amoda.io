@@ -1,6 +1,6 @@
 <script setup>
   import VHeader from '@/components/header/vHeader.vue';
-  import ProductCard from '@/views/ProductCard/ProductCard.vue';
+  import ProductCard from '@/views/ProductCard/ProductCardView.vue';
   import MyFooter from '@/components/footer/MyFooter.vue';
 </script>
 

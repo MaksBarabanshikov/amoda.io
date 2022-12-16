@@ -3,7 +3,7 @@
   import slideExample from '@/assets/img/image/slider-example.jpg';
   import IconArrow from '@/icons/IconArrow.vue';
   import ImageControl from '@/components/MyCarousel/ImageControl.vue';
-  import { ref } from 'vue';
+  import { reactive, ref } from 'vue';
 
   defineProps({
     slides: Array,
@@ -11,17 +11,26 @@
     controlImage: Boolean,
   });
 
+  const settings = reactive({
+    itemsToShow: 1,
+    transition: 700,
+    snapAlign: 'start',
+  });
+
   const mainCarousel = ref(null);
 
   const handleChangeSlide = (slide) => {
-    console.log(slide);
     return mainCarousel.value.slideTo(slide);
   };
 </script>
 
 <template>
-  <carousel ref="mainCarousel" class="product-card__carousel">
-    <slide v-for="slide in slides" :key="slide">
+  <carousel
+    :settings="settings"
+    ref="mainCarousel"
+    class="product-card__carousel"
+  >
+    <slide v-for="slide in slides" class="px-2" :key="slide">
       <v-img :src="slideExample" />
     </slide>
     <template #addons>
@@ -52,18 +61,28 @@
   .product-card__carousel {
     .v-btn {
       background: rgba(255, 255, 255, 0.3) !important;
+      transition: all 0.15s ease-in-out;
     }
   }
 
   .carousel__prev,
   .carousel__next {
+    opacity: 1 !important;
     width: auto !important;
     height: auto !important;
+    transition: all 0.15s ease-in-out;
   }
 
   .carousel__next--disabled,
   .carousel__prev--disabled {
     opacity: 1 !important;
+    .v-btn--variant-elevated {
+      opacity: 1 !important;
+    }
+
+    .v-btn--variant-flat {
+      opacity: 0.5 !important;
+    }
 
     .arrow {
       background: #5f5f5f;
@@ -75,14 +94,14 @@
     right: 50%;
     bottom: 30px !important;
     transform: translateX(50%) !important;
+    background: transparent;
 
     &-button {
-      overflow: hidden;
-
       &:after {
+        transition: all 0.2s ease-in-out;
         width: 5px !important;
         height: 5px !important;
-        background: #ffffff !important;
+        background-color: #ffffff !important;
         border-radius: 50% !important;
       }
 

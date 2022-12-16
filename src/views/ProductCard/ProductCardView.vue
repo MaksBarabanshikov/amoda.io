@@ -1,7 +1,7 @@
 <script setup>
-  import StickyJohny from '@/views/ProductCard/StickyJohny.vue';
-  import CardContent from '@/views/ProductCard/CardContent.vue';
-  import CarouselOffers from '@/views/ProductCard/CarouselOffers.vue';
+  import StickyJohny from '@/views/ProductCard/components/StickyJohny.vue';
+  import CardContent from '@/views/ProductCard/components/CardContent.vue';
+  import CarouselOffers from '@/views/ProductCard/components/CarouselOffers.vue';
 </script>
 <template>
   <section class="product-card">

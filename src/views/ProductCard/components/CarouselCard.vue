@@ -4,16 +4,17 @@
 </script>
 
 <template>
-  <v-card class="carousel-card">
+  <v-card link rounded class="carousel-card w-100">
     <v-img
+      transition="500"
       src="https://cdn.vuetifyjs.com/images/cards/sunshine.jpg"
       height="180"
       cover
     />
     <div class="carousel-card__content p-4">
       <v-card-title class="carousel-card__title">
-        The Hills at Oakwood Apartment Homes</v-card-title
-      >
+        The Hills at Oakwood Apartment Homes
+      </v-card-title>
 
       <v-card-subtitle class="carousel-card__subtitle text-left">
         Jersey Pike, Chattanooga,
@@ -21,7 +22,7 @@
 
       <h3 class="carousel-card__price text-left">1000 TL</h3>
 
-      <p class="carousel-card__text">
+      <p class="carousel-card__text text-left">
         Get inspired at The Hills at Oakwood, where opportunity and a
         comfortable home awaits. Offering pet-friendly one, two, and three
         bedroom apartments ...
@@ -70,10 +71,10 @@
     }
 
     &__text {
-      font-style: normal;
       font-weight: 400;
       font-size: 12px;
       line-height: 150%;
+      font-style: normal;
       color: #5f5f5f;
       margin-bottom: 16px;
     }

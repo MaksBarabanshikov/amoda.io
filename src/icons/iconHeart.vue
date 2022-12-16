@@ -1,6 +1,17 @@
-<script setup>
-  import heart from '@/assets/img/icons/heart.svg';
-</script>
 <template>
-  <img :src="heart" alt="heart" />
+  <svg
+    width="18"
+    height="15"
+    viewBox="0 0 18 15"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M2.14228 2.11522C0.619239 3.60218 0.619239 6.01302 2.14228 7.49998L8.80005 14L15.4577 7.49998C16.9808 6.01302 16.9808 3.60218 15.4577 2.11522C13.9347 0.62826 11.4653 0.62826 9.94228 2.11522L8.80005 3.23048L7.65772 2.11522C6.13467 0.62826 3.66533 0.62826 2.14228 2.11522Z"
+      stroke="white"
+      stroke-width="1.8"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+  </svg>
 </template>

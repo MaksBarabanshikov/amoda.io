@@ -1,6 +1,17 @@
-<script setup>
-  import user from '@/assets/img/icons/user.svg';
-</script>
 <template>
-  <img :src="user" alt="you" />
+  <svg
+    width="14"
+    height="14"
+    viewBox="0 0 14 14"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M7 7.35294C8.75432 7.35294 10.1765 5.93079 10.1765 4.17647C10.1765 2.42215 8.75432 1 7 1C5.24568 1 3.82353 2.42215 3.82353 4.17647C3.82353 5.93079 5.24568 7.35294 7 7.35294ZM7 7.35294C3.68629 7.35294 1 9.88122 1 13M7 7.35294C10.3137 7.35294 13 9.88122 13 13"
+      stroke="white"
+      stroke-width="1.8"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+  </svg>
 </template>
