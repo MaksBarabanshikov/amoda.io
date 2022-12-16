@@ -1,6 +1,7 @@
 import { createApp } from 'vue';
-import './style.scss';
 import App from './App.vue';
+import './style.scss';
+import 'vue3-carousel/dist/carousel.css';
 
 import 'vuetify/styles';
 import { createVuetify } from 'vuetify';

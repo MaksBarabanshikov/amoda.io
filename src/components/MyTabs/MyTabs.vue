@@ -10,7 +10,7 @@
 
 <template>
   <div class="product-card__block">
-    <v-card>
+    <v-card class="my-tab">
       <v-tabs
         grow
         v-model="tab"
@@ -105,3 +105,9 @@
     </v-card>
   </div>
 </template>
+
+<style>
+  .my-tab {
+    box-shadow: none;
+  }
+</style>

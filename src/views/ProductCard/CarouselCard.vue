@@ -4,22 +4,22 @@
 </script>
 
 <template>
-  <v-card class="carousel-card mx-auto" width="100%">
+  <v-card class="carousel-card">
     <v-img
       src="https://cdn.vuetifyjs.com/images/cards/sunshine.jpg"
       height="180"
       cover
-    ></v-img>
+    />
     <div class="carousel-card__content p-4">
       <v-card-title class="carousel-card__title">
         The Hills at Oakwood Apartment Homes</v-card-title
       >
 
-      <v-card-subtitle class="carousel-card__subtitle">
+      <v-card-subtitle class="carousel-card__subtitle text-left">
         Jersey Pike, Chattanooga,
       </v-card-subtitle>
 
-      <h3 class="carousel-card__price">1000 TL</h3>
+      <h3 class="carousel-card__price text-left">1000 TL</h3>
 
       <p class="carousel-card__text">
         Get inspired at The Hills at Oakwood, where opportunity and a
@@ -49,6 +49,7 @@
       font-size: 18px;
       line-height: 22px;
       margin-bottom: 10px;
+      color: #1f74fd;
     }
 
     &__subtitle {

@@ -12,7 +12,7 @@
     'deep-purple accent-4',
   ];
 
-  const slides = ['First', 'Second', 'Third', 'Fourth', 'Fifth'];
+  const slides = ['First', 'Second', 'Third', 'Fourth', 'Fifth', 'Fifth'];
 
   const tabItem = [
     'Amusement  Center',
@@ -40,7 +40,7 @@
 </script>
 <template>
   <v-col class="product-card__content" cols="9">
-    <my-carousel :colors="colors" :slides="slides" />
+    <my-carousel :colors="colors" :slides="slides" control-image />
     <text-block />
     <my-tabs :tab-item="tabItem" />
     <div class="product-card__map mb-0">
