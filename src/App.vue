@@ -1,6 +1,5 @@
 <script setup>
   import VHeader from '@/components/header/vHeader.vue';
-  import ProductCard from '@/views/ProductCard/ProductCardView.vue';
   import MyFooter from '@/components/footer/MyFooter.vue';
   import MyBreadcrumbs from '@/components/myBreadcrumbs/myBreadcrumbs.vue';
 </script>
@@ -11,7 +10,7 @@
     <v-main>
       <v-container>
         <my-breadcrumbs />
-        <product-card />
+        <router-view></router-view>
       </v-container>
     </v-main>
     <my-footer />

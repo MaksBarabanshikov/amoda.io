@@ -1,5 +1,5 @@
 <script setup>
-  import map from '@/assets/img/image/map.png';
+  import mapImage from '@/assets/img/image/map.png';
   import MyCarousel from '@/components/MyCarousel/MyCarousel.vue';
   import TextBlock from '@/views/ProductCard/components/TextBlock.vue';
   import MyTabs from '@/components/MyTabs/MyTabs.vue';
@@ -103,7 +103,7 @@
     <text-block />
     <my-tabs :tab-item="tabItem" />
     <div class="product-card__map mb-0">
-      <v-img :src="map" />
+      <v-img :src="mapImage" />
     </div>
   </v-col>
 </template>
