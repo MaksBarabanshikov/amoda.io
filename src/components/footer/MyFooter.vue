@@ -6,13 +6,13 @@
 </script>
 
 <template>
-  <v-footer class="footer bg-white mt-[100px]">
-    <v-container class="d-flex align-center">
-      <v-row class="justify-space-between">
+  <v-footer class="footer bg-white mt-[100px]" elevation="3">
+    <v-container class="d-flex">
+      <v-row class="align-center justify-space-between">
         <v-col cols="2">
           <span>© 2022 Amoda.io </span>
         </v-col>
-        <v-col cols="4">
+        <v-col cols="8">
           <v-nav :items="navItems" />
         </v-col>
         <v-col cols="2" class="d-flex justify-space-between">
