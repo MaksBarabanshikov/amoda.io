@@ -4,11 +4,7 @@
   });
 </script>
 <template>
-  <nav>
-    <ul class="flex align-center justify-center ma-auto h-100">
-      <li class="ml-7" v-for="item in items" :key="item">
-        <a href="#">{{ item }}</a>
-      </li>
-    </ul>
-  </nav>
+  <v-list class="d-md-flex justify-center pa-0">
+    <v-list-item v-for="item in items" link :key="item" :title="item" rounded />
+  </v-list>
 </template>

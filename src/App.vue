@@ -7,7 +7,7 @@
 <template>
   <v-app theme="">
     <v-header />
-    <v-main>
+    <v-main class="mt-1">
       <v-container>
         <my-breadcrumbs />
         <router-view></router-view>
@@ -45,9 +45,5 @@
     font-style: normal;
     src: local('Commissioner'),
       url(./assets/fonts/Commissioner-ExtraBold.ttf) format('truetype');
-  }
-
-  .v-main {
-    padding-top: 25px !important;
   }
 </style>

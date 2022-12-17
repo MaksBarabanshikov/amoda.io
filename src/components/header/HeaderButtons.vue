@@ -2,6 +2,9 @@
   import IconUser from '@/icons/iconUser.vue';
   import IconHeart from '@/icons/iconHeart.vue';
   import IconPlus from '@/icons/iconPlus.vue';
+  import { useDisplay } from 'vuetify';
+
+  const { mobile } = useDisplay();
 </script>
 
 <template>
@@ -10,13 +13,21 @@
       <IconHeart />
     </v-btn>
 
-    <v-btn class="primary-gradient me-4" icon size="36">
+    <v-btn class="primary-gradient me-md-4 me-2" icon size="36">
       <IconUser />
     </v-btn>
 
-    <v-btn class="primary-gradient text-white rounded-lg" height="48">
+    <v-btn
+      v-if="!mobile"
+      class="primary-gradient text-white rounded-lg"
+      height="48"
+    >
       <IconPlus class="me-2" />
       <span>Добавить объявление</span>
+    </v-btn>
+
+    <v-btn v-if="mobile" class="primary-gradient" icon height="36" width="36">
+      <IconPlus />
     </v-btn>
   </div>
 </template>
