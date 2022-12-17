@@ -1,15 +1,20 @@
 <script setup>
+  import InformationIcon from '@/icons/information/informationIcon.vue';
+
   const params = [
     {
-      title: '260 м2',
+      title: '260 м',
+      sup: '2',
       subtitle: 'total area',
     },
     {
-      title: '240 м2',
+      title: '240 м',
+      sup: '2',
       subtitle: 'living space',
     },
     {
-      title: '40 м2',
+      title: '40 м',
+      sup: '2',
       subtitle: 'kitchen',
     },
     {
@@ -25,39 +30,51 @@
   const info = [
     {
       text: 'Children allowed',
+      type: 'pram',
     },
     {
       text: 'Pets allowed',
+      type: 'pets',
     },
     {
       text: 'Fridge',
+      type: 'fridge',
     },
     {
       text: `Room’s furniture`,
+      type: 'room-furniture',
     },
     {
       text: 'Television',
+      type: 'television',
     },
     {
       text: 'Shower cabin',
+      type: 'shower',
     },
     {
       text: 'Dishwasher',
+      type: 'dishwasher',
     },
     {
       text: 'Kitchen',
+      type: 'kitchen',
     },
     {
       text: 'Wi Fi',
+      type: 'wifi',
     },
     {
       text: 'Washing machine',
+      type: 'dishwasher',
     },
     {
       text: 'Air conditioner',
+      type: 'air-conditioner',
     },
     {
       text: 'Bash',
+      type: 'bath',
     },
   ];
 </script>
@@ -65,12 +82,12 @@
 <template>
   <div class="product-card__block py-10 px-12">
     <v-list class="product-params d-flex justify-space-between text-center">
-      <v-list-item
-        v-for="param in params"
-        :key="param.subtitle"
-        :title="param.title"
-        :subtitle="param.subtitle"
-      />
+      <v-list-item v-for="param in params" :key="param.subtitle">
+        <v-list-item-title
+          >{{ param.title }}<sup>{{ param.sup }}</sup></v-list-item-title
+        >
+        <v-list-item-subtitle>{{ param.subtitle }}</v-list-item-subtitle>
+      </v-list-item>
     </v-list>
   </div>
   <div class="product-card__block py-10 px-12">
@@ -95,8 +112,12 @@
         class="text-dark"
         v-for="infoItem in info"
         :key="infoItem.text"
-        :title="infoItem.text"
-      />
+      >
+        <template v-slot:prepend>
+          <information-icon :type="infoItem.type" />
+        </template>
+        <v-list-item-title>{{ infoItem.text }}</v-list-item-title>
+      </v-list-item>
     </v-list>
   </div>
 </template>

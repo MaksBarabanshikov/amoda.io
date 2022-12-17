@@ -1,5 +1,6 @@
 <script setup>
   import { ref } from 'vue';
+  import IconCheck from '@/icons/iconCheck.vue';
 
   const tab = ref(null);
 
@@ -36,8 +37,17 @@
                 class="text-dark"
                 v-for="content in tabItem"
                 :key="content"
-                :title="content"
-              />
+              >
+                <v-list-item-title class="d-flex align-center">
+                  <span>
+                    {{ content.text }}
+                  </span>
+                  <v-spacer class="border-dotted" />
+                  <div class="icon">
+                    <IconCheck :checked="content.checked" />
+                  </div>
+                </v-list-item-title>
+              </v-list-item>
             </v-list>
           </v-window-item>
           <v-window-item value="Nearliness">
@@ -48,8 +58,17 @@
                 class="text-dark"
                 v-for="content in tabItem"
                 :key="content"
-                :title="content"
-              />
+              >
+                <v-list-item-title class="d-flex align-center">
+                  <span>
+                    {{ content.text }}
+                  </span>
+                  <v-spacer class="border-dotted" />
+                  <div class="icon">
+                    <IconCheck :checked="content.checked" />
+                  </div>
+                </v-list-item-title>
+              </v-list-item>
             </v-list>
           </v-window-item>
           <v-window-item value="Transportation">
@@ -60,8 +79,17 @@
                 class="text-dark"
                 v-for="content in tabItem"
                 :key="content"
-                :title="content"
-              />
+              >
+                <v-list-item-title class="d-flex align-center">
+                  <span>
+                    {{ content.text }}
+                  </span>
+                  <v-spacer class="border-dotted" />
+                  <div class="icon">
+                    <IconCheck :checked="content.checked" />
+                  </div>
+                </v-list-item-title>
+              </v-list-item>
             </v-list>
           </v-window-item>
           <v-window-item value="Residence Type">
@@ -72,8 +100,17 @@
                 class="text-dark"
                 v-for="content in tabItem"
                 :key="content"
-                :title="content"
-              />
+              >
+                <v-list-item-title class="d-flex align-center">
+                  <span>
+                    {{ content.text }}
+                  </span>
+                  <v-spacer class="border-dotted" />
+                  <div class="icon">
+                    <IconCheck :checked="content.checked" />
+                  </div>
+                </v-list-item-title>
+              </v-list-item>
             </v-list>
           </v-window-item>
           <v-window-item value="Accessible Housing">
@@ -84,8 +121,17 @@
                 class="text-dark"
                 v-for="content in tabItem"
                 :key="content"
-                :title="content"
-              />
+              >
+                <v-list-item-title class="d-flex align-center">
+                  <span>
+                    {{ content.text }}
+                  </span>
+                  <v-spacer class="border-dotted" />
+                  <div class="icon">
+                    <IconCheck :checked="content.checked" />
+                  </div>
+                </v-list-item-title>
+              </v-list-item>
             </v-list>
           </v-window-item>
           <v-window-item value="Accessible Housing2">
@@ -96,8 +142,17 @@
                 class="text-dark"
                 v-for="content in tabItem"
                 :key="content"
-                :title="content"
-              />
+              >
+                <v-list-item-title class="d-flex align-center">
+                  <span>
+                    {{ content.text }}
+                  </span>
+                  <v-spacer class="border-dotted" />
+                  <div class="icon">
+                    <IconCheck :checked="content.checked" />
+                  </div>
+                </v-list-item-title>
+              </v-list-item>
             </v-list>
           </v-window-item>
         </v-window>
@@ -106,8 +161,29 @@
   </div>
 </template>
 
-<style>
+<style lang="scss">
   .my-tab {
-    box-shadow: none;
+    box-shadow: none !important;
+
+    .v-list-item-title {
+      max-width: 170px;
+      .border-dotted {
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+        height: 20px;
+        margin: 0 10px;
+        &:after {
+          position: absolute;
+          content: '........................................................';
+          display: block;
+          white-space: nowrap;
+          overflow: hidden;
+          color: #c1c1c1;
+          font-size: 8px;
+          letter-spacing: 5px;
+        }
+      }
+    }
   }
 </style>

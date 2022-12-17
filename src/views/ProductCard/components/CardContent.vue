@@ -15,27 +15,86 @@
   const slides = ['First', 'Second', 'Third', 'Fourth', 'Fifth', 'Fifth'];
 
   const tabItem = [
-    'Amusement  Center',
-    'Cemevi',
-    'Church',
-    'City Center',
-    'Fair',
-    'Fire Departmant',
-    'Grocery',
-    'Amusement  Center',
-    'Cemevi',
-    'Church',
-    'City Center',
-    'Fair',
-    'Fire Departmant',
-    'Grocery',
-    'Amusement  Center',
-    'Cemevi',
-    'Church',
-    'City Center',
-    'Fair',
-    'Fire Departmant',
-    'Grocery',
+    {
+      text: 'Amusement  Center',
+      checked: true,
+    },
+    {
+      text: 'Cemevi',
+      checked: true,
+    },
+    {
+      text: 'Church',
+      checked: true,
+    },
+    {
+      text: 'City Center',
+      checked: true,
+    },
+    {
+      text: 'Fair',
+      checked: true,
+    },
+    {
+      text: 'Fire Departmant',
+      checked: true,
+    },
+    {
+      text: 'Grocery',
+      checked: true,
+    },
+    {
+      text: 'Cemevi',
+      checked: true,
+    },
+    {
+      text: 'Amusement  Center',
+      checked: true,
+    },
+    {
+      text: 'Cemevi',
+      checked: true,
+    },
+    {
+      text: 'Amusement  Center',
+      checked: true,
+    },
+    {
+      text: 'Cemevi',
+      checked: true,
+    },
+    {
+      text: 'Church',
+      checked: true,
+    },
+    {
+      text: 'City Center',
+      checked: true,
+    },
+    {
+      text: 'Fair',
+      checked: true,
+    },
+    {
+      text: 'Fire Departmant',
+      checked: true,
+    },
+    {
+      text: 'Grocery',
+      checked: true,
+    },
+    {
+      text: 'Cemevi',
+      checked: true,
+    },
+    {
+      text: 'Amusement  Center',
+      checked: true,
+    },
+    {
+      text: 'Cemevi',
+      checked: true,
+    },
   ];
 </script>
 <template>

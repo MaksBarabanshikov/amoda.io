@@ -4,6 +4,7 @@
   import IconHeart from '@/icons/iconHeart.vue';
   import IconShare from '@/icons/iconShare.vue';
   import IconPrint from '@/icons/iconPrint.vue';
+  import IconBell from '@/icons/iconBell.vue';
 
   const list = [
     {
@@ -35,22 +36,30 @@
             </div>
           </v-list-item>
         </v-list>
-        <span> Monitor price changes </span>
+        <span class="d-flex align-center"
+          ><icon-bell class="me-2" /> Monitor price changes
+        </span>
       </div>
       <div class="sticky-johny__body mt-4">
         <div class="sticky-johny__body_info">
-          <div class="flex">
-            <img :src="person" class="rounded-circle mr-3" />
+          <div class="d-flex">
+            <v-img :src="person" class="rounded-circle mr-3" />
             <div>
-              <div class="leading-5 mb-1">
+              <div class="person leading-5 mb-1">
                 <span>Private person</span>
                 <h6>Vladimir Smirnov</h6>
               </div>
               <a class="text-blue font-medium"> 7 advertisements </a>
             </div>
           </div>
-          <img class="ma-auto mt-4 mb-2" :src="glorax" alt="" />
-          <span class="d-block text-center mb-3">Licence: 474648837373</span>
+          <img
+            class="sticky-johny__body_company ma-auto mt-8 mb-2"
+            :src="glorax"
+            alt=""
+          />
+          <div class="sticky-johny__body_license d-block text-center mb-3">
+            Licence: <span>474648837373</span>
+          </div>
           <v-btn
             class="primary-gradient text-white rounded-lg w-100"
             height="48"
@@ -67,13 +76,13 @@
         </div>
       </div>
       <div class="sticky-johny__footer mt-4 text-center p-5">
-        <v-btn class="bg-gray me-2" icon size="42">
+        <v-btn class="bg-gray me-2" variant="plain" icon size="42">
           <IconShare />
         </v-btn>
-        <v-btn class="bg-gray me-2" icon size="42">
+        <v-btn class="bg-gray me-2" variant="plain" icon size="42">
           <IconPrint />
         </v-btn>
-        <v-btn class="bg-gray" icon size="42">
+        <v-btn class="bg-gray" variant="plain" icon size="42">
           <IconHeart />
         </v-btn>
       </div>
@@ -97,6 +106,80 @@
 
     &__footer {
       @apply p-5;
+    }
+
+    &__head {
+      h3 {
+        font-weight: 500;
+        font-size: 30px;
+        line-height: 37px;
+        color: #1f74fd;
+        margin-bottom: 4px;
+      }
+
+      span {
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 150%;
+        color: #5f5f5f;
+      }
+
+      .v-list {
+        margin-top: 15px;
+        margin-bottom: 15px;
+        padding: 0;
+      }
+    }
+
+    &__body {
+      &_info {
+        .v-img {
+          max-width: 80px !important;
+          max-height: 80px !important;
+        }
+        .person {
+          span {
+            font-weight: 400;
+            font-size: 13px;
+            line-height: 160%;
+            color: #5f5f5f;
+          }
+          h4 {
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 160%;
+            color: #2e2e2e;
+          }
+        }
+      }
+
+      &_license {
+        font-weight: 500;
+        font-size: 13px;
+        line-height: 160%;
+        color: #2e2e2e;
+
+        span {
+          color: #5f5f5f !important;
+        }
+      }
+
+      .v-btn {
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 17px;
+        text-align: center;
+        color: #ffffff;
+        border-radius: 10px !important;
+      }
+    }
+
+    &__footer {
+      .v-btn {
+        & > * {
+          transition: all 0.15s ease-in-out;
+        }
+      }
     }
   }
 </style>

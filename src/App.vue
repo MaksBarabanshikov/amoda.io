@@ -2,6 +2,7 @@
   import VHeader from '@/components/header/vHeader.vue';
   import ProductCard from '@/views/ProductCard/ProductCardView.vue';
   import MyFooter from '@/components/footer/MyFooter.vue';
+  import MyBreadcrumbs from '@/components/myBreadcrumbs/myBreadcrumbs.vue';
 </script>
 
 <template>
@@ -9,7 +10,7 @@
     <v-header />
     <v-main>
       <v-container>
-        <v-breadcrumbs :items="['Real Estate', 'Sale']" divider="-" />
+        <my-breadcrumbs />
         <product-card />
       </v-container>
     </v-main>
@@ -45,5 +46,9 @@
     font-style: normal;
     src: local('Commissioner'),
       url(./assets/fonts/Commissioner-ExtraBold.ttf) format('truetype');
+  }
+
+  .v-main {
+    padding-top: 25px !important;
   }
 </style>
