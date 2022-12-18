@@ -98,7 +98,7 @@
   ];
 </script>
 <template>
-  <v-col class="product-card__content" cols="9">
+  <v-col class="product-card__content" md="12" lg="9">
     <my-carousel :colors="colors" :slides="slides" control-image />
     <text-block />
     <my-tabs :tab-item="tabItem" />
@@ -111,10 +111,26 @@
 <style lang="scss">
   .product-params {
     .v-list-item-title {
-      @apply text-dark text-xl font-medium;
+      font-weight: 500;
+      font-size: 22px;
+      line-height: 130%;
+      @media screen and (max-width: 1000px) {
+        font-size: 16px;
+        color: #2e2e2e;
+      }
+
+      @media screen and (max-width: 568px) {
+        font-size: 14px;
+      }
     }
     .v-list-item-subtitle {
-      @apply text-grayDark text-base;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 130%;
+      @media screen and (max-width: 1000px) {
+        font-size: 14px;
+        color: #5f5f5f;
+      }
     }
   }
   .product-card__content {
@@ -123,19 +139,39 @@
     }
   }
   .product-card__block {
-    @apply bg-white rounded-10;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 40px;
+
+    @media (max-width: 1000px) {
+      padding: 30px;
+    }
+
+    @media (max-width: 700px) {
+      padding: 20px 15px !important;
+    }
 
     &-title {
       font-weight: 500;
       font-size: 24px;
       line-height: 29px;
       margin-bottom: 10px;
+
+      @media (max-width: 1000px) {
+        font-size: 20px;
+        line-height: 24px;
+      }
     }
 
     &-text {
       font-weight: 400;
       font-size: 15px;
       line-height: 200%;
+
+      @media (max-width: 1000px) {
+        font-size: 12px;
+        line-height: 165%;
+      }
     }
   }
   .product-card__info {

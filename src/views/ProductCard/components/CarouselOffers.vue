@@ -1,8 +1,9 @@
 <script setup>
-  import { Carousel, Slide, Navigation } from 'vue3-carousel';
+  import { Carousel, Slide, Navigation, Pagination } from 'vue3-carousel';
   import IconArrow from '@/icons/IconArrow.vue';
   import CarouselCard from '@/views/ProductCard/components/CarouselCard.vue';
   import { reactive } from 'vue';
+  import { useDisplay } from 'vuetify';
 
   const settings = reactive({
     itemsToShow: 4,
@@ -10,19 +11,33 @@
     snapAlign: 'start',
   });
 
+  const { mobile } = useDisplay();
+
+  const breakpoints = {
+    1200: {
+      itemsToShow: 4,
+    },
+    754: {
+      itemsToShow: 2,
+    },
+    300: {
+      itemsToShow: 1,
+    },
+  };
+
   const slides = ['первый', 'второй', 'третий', 'четвертый', 'пятый', 'шестой'];
 </script>
 <template>
-  <div class="product-card__block product-card__test py-10 mt-5">
-    <div class="px-12">
-      <h2 class="product-card__block-title mb-7">Nearliness</h2>
+  <div class="product-card__block product-card__test py-lg-10 mt-5">
+    <div class="px-lg-12">
+      <h2 class="product-card__block-title mb-lg-7">Nearliness</h2>
       <div class="carousel-cards">
-        <carousel :settings="settings">
+        <carousel :settings="settings" :breakpoints="breakpoints">
           <slide v-for="slide in slides" :key="slide">
             <carousel-card />
           </slide>
           <template #addons>
-            <navigation>
+            <navigation v-if="!mobile">
               <template #prev>
                 <v-btn class="blue-arrow" variant="flat" icon size="40">
                   <IconArrow type="prev" />
@@ -34,6 +49,7 @@
                 </v-btn>
               </template>
             </navigation>
+            <pagination v-if="mobile" />
           </template>
         </carousel>
       </div>
@@ -48,6 +64,20 @@
 
     .carousel__viewport {
       padding: 10px 0 10px 0;
+    }
+
+    .carousel__pagination {
+      bottom: -20px !important;
+
+      &-button {
+        &:after {
+          background-color: #e2e2e2 !important;
+        }
+
+        &--active:after {
+          background-color: #1f74fd !important;
+        }
+      }
     }
 
     .v-btn {

@@ -3,6 +3,9 @@
   import CardContent from '@/views/ProductCard/components/CardContent.vue';
   import CarouselOffers from '@/views/ProductCard/components/CarouselOffers.vue';
   import IconLocation from '@/icons/iconLocation.vue';
+  import { useDisplay } from 'vuetify';
+
+  const { mobile } = useDisplay();
 </script>
 <template>
   <section class="product-card">
@@ -17,7 +20,7 @@
     </div>
     <v-row class="relative mt-8">
       <card-content />
-      <sticky-johny />
+      <sticky-johny v-if="!mobile" />
     </v-row>
   </section>
   <carousel-offers />
@@ -29,6 +32,19 @@
       h1 {
         font-size: 28px;
         font-weight: 500;
+
+        @media (max-width: 1000px) {
+          font-size: 22px;
+          line-height: 130%;
+        }
+      }
+
+      span {
+        @media (max-width: 1000px) {
+          font-weight: 400;
+          font-size: 12px;
+          line-height: 160%;
+        }
       }
     }
   }

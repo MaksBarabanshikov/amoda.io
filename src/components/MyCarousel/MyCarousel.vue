@@ -4,6 +4,7 @@
   import IconArrow from '@/icons/IconArrow.vue';
   import ImageControl from '@/components/MyCarousel/ImageControl.vue';
   import { reactive, ref } from 'vue';
+  import { useDisplay } from 'vuetify';
 
   defineProps({
     slides: Array,
@@ -16,6 +17,8 @@
     transition: 700,
     snapAlign: 'start',
   });
+
+  const { mobile } = useDisplay();
 
   const mainCarousel = ref(null);
 
@@ -51,7 +54,7 @@
   </carousel>
 
   <image-control
-    v-if="controlImage"
+    v-if="controlImage && !mobile"
     :slides="slides"
     @changeSlide="handleChangeSlide"
   />

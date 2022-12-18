@@ -1,5 +1,9 @@
 <script setup>
   import InformationIcon from '@/icons/information/informationIcon.vue';
+  import StickyJohny from '@/views/ProductCard/components/StickyJohny.vue';
+  import { useDisplay } from 'vuetify';
+
+  const { mobile } = useDisplay();
 
   const params = [
     {
@@ -80,7 +84,7 @@
 </script>
 
 <template>
-  <div class="product-card__block py-10 px-12">
+  <div class="product-card__block">
     <v-list class="product-params d-flex justify-space-between text-center">
       <v-list-item v-for="param in params" :key="param.subtitle">
         <v-list-item-title
@@ -90,7 +94,8 @@
       </v-list-item>
     </v-list>
   </div>
-  <div class="product-card__block py-10 px-12">
+  <sticky-johny class="w-100" v-if="mobile" />
+  <div class="product-card__block">
     <h2 class="product-card__block-title">Ultra luxurious</h2>
     <p class="product-card__block-text">
       Our pet-friendly community offers 2 resort-style swimming pools and a
@@ -104,9 +109,9 @@
       camdenliving.com to save a quote.
     </p>
   </div>
-  <div class="product-card__block product-card__info py-10 px-12">
+  <div class="product-card__block product-card__info">
     <h2 class="product-card__block-title">Information</h2>
-    <v-list class="grid grid-cols-4">
+    <v-list>
       <v-list-item
         min-height="25"
         class="text-dark"
@@ -121,3 +126,23 @@
     </v-list>
   </div>
 </template>
+
+<style lang="scss">
+  .product-card__info {
+    .v-list {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+
+      @media (max-width: 1000px) {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      &-item-title {
+        @media (max-width: 1000px) {
+          font-size: 13px;
+          line-height: 220%;
+        }
+      }
+    }
+  }
+</style>

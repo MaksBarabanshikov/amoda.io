@@ -1,6 +1,6 @@
 <script setup>
   import VHeader from '@/components/header/vHeader.vue';
-  import MyFooter from '@/components/footer/MyFooter.vue';
+  // import MyFooter from '@/components/footer/MyFooter.vue';
   import MyBreadcrumbs from '@/components/myBreadcrumbs/myBreadcrumbs.vue';
 </script>
 
@@ -13,7 +13,7 @@
         <router-view></router-view>
       </v-container>
     </v-main>
-    <my-footer />
+    <!--    <my-footer />-->
   </v-app>
 </template>
 

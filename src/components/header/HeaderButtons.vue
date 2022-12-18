@@ -25,9 +25,5 @@
       <IconPlus class="me-2" />
       <span>Добавить объявление</span>
     </v-btn>
-
-    <v-btn v-if="mobile" class="primary-gradient" icon height="36" width="36">
-      <IconPlus />
-    </v-btn>
   </div>
 </template>

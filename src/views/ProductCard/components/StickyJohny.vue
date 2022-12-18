@@ -23,14 +23,14 @@
 </script>
 
 <template>
-  <v-col cols="3">
+  <v-col class="pa-0" sm="12" lg="3">
     <div class="sticky-johny sticky top-20">
       <div class="sticky-johny__head">
         <h3>150 000 $</h3>
         <span>from 1500 $/month in mortgage</span>
         <v-list>
           <v-list-item v-for="item in list" :key="item.title" min-height="26">
-            <div class="d-flex">
+            <div class="d-flex align-center">
               <h6>{{ item.title }}&nbsp;</h6>
               <span>{{ item.content }}</span>
             </div>
@@ -97,11 +97,16 @@
 
   .sticky-johny {
     & > div {
-      @apply bg-white rounded-10;
+      background: #fff;
+      border-radius: 10px;
     }
     &__head,
     &__body {
-      @apply pt-7 pb-9 pl-7 pr-9;
+      padding: 30px 40px;
+
+      @media (max-width: 1000px) {
+        padding: 15px 20px;
+      }
     }
 
     &__footer {
@@ -115,6 +120,12 @@
         line-height: 37px;
         color: #1f74fd;
         margin-bottom: 4px;
+
+        @media (max-width: 1000px) {
+          font-weight: 500;
+          font-size: 22px;
+          line-height: 27px;
+        }
       }
 
       span {
@@ -122,12 +133,22 @@
         font-size: 15px;
         line-height: 150%;
         color: #5f5f5f;
+
+        @media (max-width: 1000px) {
+          font-weight: 400;
+          font-size: 13px;
+          line-height: 150%;
+        }
       }
 
       .v-list {
         margin-top: 15px;
         margin-bottom: 15px;
         padding: 0;
+
+        @media (max-width: 1000px) {
+          margin: 10px 0;
+        }
       }
     }
 

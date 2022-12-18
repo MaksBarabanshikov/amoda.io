@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  max-width: 100vw;
+  overflow: hidden;
+}
 body {
   font-family: 'Commissioner', sans-serif;
   font-weight: 400;

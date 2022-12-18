@@ -11,15 +11,31 @@
 
   const settings = {
     itemsToShow: 5,
+    transition: 500,
+    snapAlign: 'start',
     mouseDrag: false,
   };
+
+  const breakpoints = {
+    925: {
+      itemsToShow: 5,
+    },
+    786: {
+      itemsToShow: 4,
+    },
+    300: {
+      itemsToShow: 3,
+    },
+  };
+
+  console.log(breakpoints);
 </script>
 
 <template>
   <div class="carousel-pagination product-card__block px-10 py-3">
     <carousel
-      translate="1000"
       :settings="settings"
+      :breakpoints="breakpoints"
       class="product-card__carousel"
     >
       <slide
@@ -52,8 +68,8 @@
 <style lang="scss">
   .carousel-pagination {
     .carousel__slide {
-      width: 170px;
-      height: 110px;
+      width: 100%;
+      height: 100%;
       padding: 0 5px 0 5px;
       border-radius: 10px;
       overflow: hidden;
