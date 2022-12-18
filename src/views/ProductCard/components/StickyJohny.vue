@@ -23,9 +23,9 @@
 </script>
 
 <template>
-  <v-col class="pa-0" sm="12" lg="3">
+  <v-col class="pb-lg-2" sm="12" lg="3">
     <div class="sticky-johny sticky top-20">
-      <div class="sticky-johny__head">
+      <v-sheet color="#fff" rounded class="sticky-johny__head">
         <h3>150 000 $</h3>
         <span>from 1500 $/month in mortgage</span>
         <v-list>
@@ -39,7 +39,7 @@
         <span class="d-flex align-center"
           ><icon-bell class="me-2" /> Monitor price changes
         </span>
-      </div>
+      </v-sheet>
       <div class="sticky-johny__body mt-4">
         <div class="sticky-johny__body_info">
           <div class="d-flex">
@@ -61,6 +61,7 @@
             Licence: <span>474648837373</span>
           </div>
           <v-btn
+            variant="flat"
             class="primary-gradient text-white rounded-lg w-100"
             height="48"
           >
@@ -68,6 +69,7 @@
           </v-btn>
 
           <v-btn
+            variant="flat"
             class="green-gradient text-white rounded-lg w-100 mt-3"
             height="48"
           >

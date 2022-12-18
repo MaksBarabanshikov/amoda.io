@@ -28,10 +28,10 @@
   </v-navigation-drawer>
   <v-app-bar class="bg-white header" height="88">
     <v-container>
-      <v-row>
-        <v-col class="d-flex" sm="6" md="2">
+      <v-row no-gutters>
+        <v-col class="d-flex pa-0 align-center" sm="6" md="2">
           <v-app-bar-nav-icon
-            class="me-2"
+            class="me-1"
             v-if="mobile"
             icon="mdi-menu"
             @click="changeIsOpen"

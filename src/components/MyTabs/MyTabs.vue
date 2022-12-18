@@ -7,147 +7,67 @@
   defineProps({
     tabItem: Array,
   });
+
+  const tabData = [
+    {
+      value: 'Interior Properties',
+      title: 'Interior Properties',
+    },
+    {
+      value: 'Nearliness',
+      title: 'Nearliness',
+    },
+    {
+      value: 'Transportation',
+      title: 'Transportation',
+    },
+    {
+      value: 'Transportation2',
+      title: 'Transportation',
+    },
+    {
+      value: 'Accessible Housing',
+      title: 'Accessible Housing',
+    },
+    {
+      value: 'Accessible Housing2',
+      title: 'Accessible Housing',
+    },
+  ];
 </script>
 
 <template>
   <v-card class="my-tab">
     <v-tabs grow v-model="tab" bg-color="#F4F4F4" color="#5F5F5F">
-      <v-tab value="Interior Properties">Interior Properties</v-tab>
-      <v-tab value="Nearliness">Nearliness</v-tab>
-      <v-tab value="Transportation">Transportation</v-tab>
-      <v-tab value="Residence Type">Transportation</v-tab>
-      <v-tab value="Accessible Housing">Accessible Housing</v-tab>
-      <v-tab value="Accessible Housing2">Accessible Housing</v-tab>
+      <template v-for="tabItem in tabData" :key="tabItem.value">
+        <v-tab :value="tabItem.value">{{ tabItem.title }}</v-tab>
+      </template>
     </v-tabs>
-
     <v-card-text>
       <v-window v-model="tab">
-        <v-window-item value="Interior Properties">
-          <h2 class="product-card__block-title">Interior Properties</h2>
-          <v-list class="grid grid-cols-4">
-            <v-list-item
-              min-height="25"
-              class="text-dark"
-              v-for="content in tabItem"
-              :key="content"
-            >
-              <v-list-item-title class="d-flex align-center">
-                <span>
-                  {{ content.text }}
-                </span>
-                <v-spacer class="border-dotted" />
-                <div class="icon">
-                  <IconCheck :checked="content.checked" />
-                </div>
-              </v-list-item-title>
-            </v-list-item>
-          </v-list>
-        </v-window-item>
-        <v-window-item value="Nearliness">
-          <h2 class="product-card__block-title">Nearliness</h2>
-          <v-list class="grid grid-cols-4">
-            <v-list-item
-              min-height="25"
-              class="text-dark"
-              v-for="content in tabItem"
-              :key="content"
-            >
-              <v-list-item-title class="d-flex align-center">
-                <span>
-                  {{ content.text }}
-                </span>
-                <v-spacer class="border-dotted" />
-                <div class="icon">
-                  <IconCheck :checked="content.checked" />
-                </div>
-              </v-list-item-title>
-            </v-list-item>
-          </v-list>
-        </v-window-item>
-        <v-window-item value="Transportation">
-          <h2 class="product-card__block-title">Transportation</h2>
-          <v-list class="grid grid-cols-4">
-            <v-list-item
-              min-height="25"
-              class="text-dark"
-              v-for="content in tabItem"
-              :key="content"
-            >
-              <v-list-item-title class="d-flex align-center">
-                <span>
-                  {{ content.text }}
-                </span>
-                <v-spacer class="border-dotted" />
-                <div class="icon">
-                  <IconCheck :checked="content.checked" />
-                </div>
-              </v-list-item-title>
-            </v-list-item>
-          </v-list>
-        </v-window-item>
-        <v-window-item value="Residence Type">
-          <h2 class="product-card__block-title">Residence Type</h2>
-          <v-list class="grid grid-cols-4">
-            <v-list-item
-              min-height="25"
-              class="text-dark"
-              v-for="content in tabItem"
-              :key="content"
-            >
-              <v-list-item-title class="d-flex align-center">
-                <span>
-                  {{ content.text }}
-                </span>
-                <v-spacer class="border-dotted" />
-                <div class="icon">
-                  <IconCheck :checked="content.checked" />
-                </div>
-              </v-list-item-title>
-            </v-list-item>
-          </v-list>
-        </v-window-item>
-        <v-window-item value="Accessible Housing">
-          <h2 class="product-card__block-title">Accessible Housing</h2>
-          <v-list class="grid">
-            <v-list-item
-              min-height="25"
-              class="text-dark"
-              v-for="content in tabItem"
-              :key="content"
-            >
-              <v-list-item-title class="d-flex align-center">
-                <span>
-                  {{ content.text }}
-                </span>
-                <v-spacer class="border-dotted" />
-                <div class="icon">
-                  <IconCheck :checked="content.checked" />
-                </div>
-              </v-list-item-title>
-            </v-list-item>
-          </v-list>
-        </v-window-item>
-        <v-window-item value="Accessible Housing2">
-          <h2 class="product-card__block-title">Accessible Housing</h2>
-          <v-list class="grid grid-cols-4">
-            <v-list-item
-              min-height="25"
-              class="text-dark"
-              v-for="content in tabItem"
-              :key="content"
-            >
-              <v-list-item-title class="d-flex align-center">
-                <span>
-                  {{ content.text }}
-                </span>
-                <v-spacer class="border-dotted" />
-                <div class="icon">
-                  <IconCheck :checked="content.checked" />
-                </div>
-              </v-list-item-title>
-            </v-list-item>
-          </v-list>
-        </v-window-item>
+        <template v-for="tabTitle in tabData" :key="tabTitle.value">
+          <v-window-item :value="tabTitle.value">
+            <h2 class="product-card__block-title">{{ tabTitle.title }}</h2>
+            <v-list class="grid grid-cols-4">
+              <v-list-item
+                min-height="25"
+                class="text-dark"
+                v-for="content in tabItem"
+                :key="content"
+              >
+                <v-list-item-title class="d-flex align-center">
+                  <span>
+                    {{ content.text }}
+                  </span>
+                  <v-spacer class="border-dotted" />
+                  <div class="icon">
+                    <IconCheck :checked="content.checked" />
+                  </div>
+                </v-list-item-title>
+              </v-list-item>
+            </v-list>
+          </v-window-item>
+        </template>
       </v-window>
     </v-card-text>
   </v-card>

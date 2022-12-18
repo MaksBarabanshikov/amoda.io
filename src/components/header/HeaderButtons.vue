@@ -13,7 +13,7 @@
       <IconHeart />
     </v-btn>
 
-    <v-btn class="primary-gradient me-md-4 me-2" icon size="36">
+    <v-btn class="primary-gradient me-md-4 me-0" icon size="36">
       <IconUser />
     </v-btn>
 
