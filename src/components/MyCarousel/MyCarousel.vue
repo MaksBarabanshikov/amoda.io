@@ -65,6 +65,24 @@
     .v-btn {
       background: rgba(255, 255, 255, 0.3) !important;
       transition: all 0.15s ease-in-out;
+
+      @media (max-width: 565px) {
+        width: 45px !important;
+        height: 45px !important;
+      }
+    }
+    .carousel__prev {
+      left: 23px !important;
+      @media (max-width: 565px) {
+        left: 10px !important;
+      }
+    }
+
+    .carousel__next {
+      right: 23px !important;
+      @media (max-width: 565px) {
+        right: 10px !important;
+      }
     }
   }
 

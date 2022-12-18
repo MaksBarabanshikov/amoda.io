@@ -84,6 +84,9 @@
 
     .v-list-item-title {
       max-width: 170px;
+      @media (max-width: 764px) {
+        max-width: 300px;
+      }
       .border-dotted {
         position: relative;
         overflow: hidden;

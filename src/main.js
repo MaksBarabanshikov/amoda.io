@@ -20,6 +20,7 @@ const router = createRouter({
 });
 
 const vuetify = createVuetify({
+  theme: false,
   display: {
     mobileBreakpoint: 'md',
   },

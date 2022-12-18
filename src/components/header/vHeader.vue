@@ -5,6 +5,7 @@
   import { navItems } from '@/helper/index.js';
   import { useDisplay } from 'vuetify';
   import { ref } from 'vue';
+  import IconPlus from '@/icons/iconPlus.vue';
 
   const isOpen = ref(false);
 
@@ -24,7 +25,17 @@
     <v-list-item class="pt-2">
       <v-logo />
     </v-list-item>
-    <v-nav class="header__nav h-100" :items="navItems" block />
+    <v-nav class="header__nav" :items="navItems" block />
+    <v-list-item class="px-1 py-2">
+      <v-btn
+        class="primary-gradient text-white rounded-lg"
+        height="48"
+        width="100%"
+      >
+        <IconPlus class="me-2" />
+        <span style="font-size: 14px !important">добавить объявление</span>
+      </v-btn>
+    </v-list-item>
   </v-navigation-drawer>
   <v-app-bar class="bg-white header" height="88">
     <v-container>
@@ -56,8 +67,6 @@
       .v-list-item-title {
         font-size: 0.8rem !important;
       }
-    }
-    @media (max-width: 1033px) {
     }
   }
 
