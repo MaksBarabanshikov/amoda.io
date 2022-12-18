@@ -29,7 +29,7 @@
   <v-app-bar class="bg-white header" height="88">
     <v-container>
       <v-row>
-        <v-col class="d-flex" sm="4" md="2">
+        <v-col class="d-flex" sm="6" md="2">
           <v-app-bar-nav-icon
             class="me-2"
             v-if="mobile"
@@ -38,11 +38,11 @@
           />
           <v-logo />
         </v-col>
-        <v-spacer />
+        <v-spacer v-if="!mobile" />
         <v-col v-if="mdAndUp" cols="6">
           <v-nav class="header__nav h-100" :items="navItems" />
         </v-col>
-        <v-col cols="4">
+        <v-col sm="6" md="4">
           <header-buttons />
         </v-col>
       </v-row>
