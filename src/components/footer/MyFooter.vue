@@ -6,17 +6,21 @@
 </script>
 
 <template>
-  <v-footer class="footer bg-white mt-[100px]" elevation="3">
+  <v-footer class="footer bg-white" elevation="3">
     <v-container class="d-flex">
       <v-row class="align-center justify-space-between">
-        <v-col cols="2">
+        <v-col class="text-center text-lg-left" cols="12" lg="2">
           <span>© 2022 Amoda.io </span>
         </v-col>
-        <v-col cols="8">
-          <v-nav :items="navItems" />
+        <v-col cols="12" lg="8">
+          <v-nav class="text-center" :items="navItems" />
         </v-col>
-        <v-col cols="2" class="d-flex justify-space-between">
-          <a class="d-flex align-center cursor-pointer">
+        <v-col
+          cols="12"
+          lg="2"
+          class="d-flex flex-column text-lg-left flex-lg-row align-center"
+        >
+          <a class="d-flex align-center cursor-pointer mb-5 ma-lg-0">
             <IconWallet class="me-1" />
             <span>USD ($)</span>
           </a>
@@ -35,5 +39,6 @@
     font-weight: 500;
     font-size: 14px;
     line-height: 160%;
+    margin-top: 100px;
   }
 </style>
