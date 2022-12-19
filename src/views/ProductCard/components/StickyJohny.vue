@@ -49,7 +49,7 @@
                 <span>Private person</span>
                 <h6>Vladimir Smirnov</h6>
               </div>
-              <a class="text-blue font-medium"> 7 advertisements </a>
+              <a class="text-primary font-medium"> 7 advertisements </a>
             </div>
           </div>
           <img
@@ -135,11 +135,19 @@
         font-size: 15px;
         line-height: 150%;
         color: #5f5f5f;
+        @media (max-width: 1000px) {
+          font-size: 13px;
+        }
+      }
+
+      h6 {
+        color: #2e2e2e;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 150%;
 
         @media (max-width: 1000px) {
-          font-weight: 400;
-          font-size: 13px;
-          line-height: 150%;
+          font-size: 15px;
         }
       }
 
@@ -150,6 +158,20 @@
 
         @media (max-width: 1000px) {
           margin: 10px 0;
+        }
+
+        span {
+          color: #2e2e2e;
+          font-weight: 400;
+          font-size: 18px;
+          line-height: 150%;
+
+          @media (max-width: 1000px) {
+            font-weight: 400;
+            font-size: 13px;
+            line-height: 150%;
+            margin-top: 3px;
+          }
         }
       }
     }

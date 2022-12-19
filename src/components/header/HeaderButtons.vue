@@ -19,7 +19,7 @@
 
     <v-btn
       v-if="!mobile"
-      class="primary-gradient text-white rounded-lg"
+      class="primary-gradient text-white rounded-10"
       height="48"
     >
       <IconPlus class="me-2" />

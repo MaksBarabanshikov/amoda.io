@@ -29,11 +29,11 @@
     },
     {
       text: 'City Center',
-      checked: true,
+      checked: false,
     },
     {
       text: 'Fair',
-      checked: true,
+      checked: false,
     },
     {
       text: 'Fire Departmant',
@@ -45,7 +45,7 @@
     },
     {
       text: 'Cemevi',
-      checked: true,
+      checked: false,
     },
     {
       text: 'Amusement  Center',

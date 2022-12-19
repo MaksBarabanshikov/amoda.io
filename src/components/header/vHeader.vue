@@ -33,7 +33,7 @@
         width="100%"
       >
         <IconPlus class="me-2" />
-        <span style="font-size: 14px !important">добавить объявление</span>
+        <span style="font-size: 14px !important">Добавить объявление</span>
       </v-btn>
     </v-list-item>
   </v-navigation-drawer>
@@ -62,6 +62,9 @@
 </template>
 
 <style lang="scss">
+  .header {
+    box-shadow: none !important;
+  }
   .header__nav {
     @media (max-width: 1033px) {
       .v-list-item-title {

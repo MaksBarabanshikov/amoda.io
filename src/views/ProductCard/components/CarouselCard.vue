@@ -1,39 +1,69 @@
 <script setup>
   import person from '@/assets/img/image/person-card.png';
-  import IconHeart from '@/icons/iconHeart.vue';
+  import IconPhoto from '@/icons/iconPhoto.vue';
+  import IconHeartOffer from '@/icons/iconHeartOffer.vue';
+
+  const emit = defineEmits(['toggle']);
+
+  const props = defineProps({
+    id: Number,
+    active: Boolean,
+  });
+
+  const handleClick = () => emit('toggle', props.id);
 </script>
 
 <template>
-  <v-card link rounded class="carousel-card w-100">
-    <v-img
-      transition="500"
-      src="https://cdn.vuetifyjs.com/images/cards/sunshine.jpg"
-      height="180"
-      cover
-    />
-    <div class="carousel-card__content p-4">
-      <v-card-title class="carousel-card__title">
+  <v-card link rounded class="offer-card w-100">
+    <v-sheet class="position-relative">
+      <v-img
+        transition="500"
+        src="https://cdn.vuetifyjs.com/images/cards/sunshine.jpg"
+        height="180"
+        cover
+      />
+      <div
+        class="offer-card__static d-flex align-center position-absolute text-white"
+      >
+        <div class="d-flex align-center me-2">
+          <icon-photo class="me-1" />
+          <span>10</span>
+        </div>
+        <div class="d-flex align-center">
+          <icon-photo class="me-1" />
+          <span>10</span>
+        </div>
+      </div>
+    </v-sheet>
+    <div class="offer-card__content p-4">
+      <v-card-title class="offer-card__title">
         The Hills at Oakwood Apartment Homes
       </v-card-title>
 
-      <v-card-subtitle class="carousel-card__subtitle text-left">
+      <v-card-subtitle class="offer-card__subtitle text-left">
         Jersey Pike, Chattanooga,
       </v-card-subtitle>
 
-      <h3 class="carousel-card__price text-left">1000 TL</h3>
+      <h3 class="offer-card__price text-left">1000 TL</h3>
 
-      <p class="carousel-card__text text-left">
+      <p class="offer-card__text text-left">
         Get inspired at The Hills at Oakwood, where opportunity and a
         comfortable home awaits. Offering pet-friendly one, two, and three
         bedroom apartments ...
       </p>
 
-      <v-card-actions class="carousel-card__actions flex align-center h-[38px]">
+      <v-card-actions class="offer-card__actions flex align-center h-[38px]">
         <v-img width="10" :src="person" />
         <span>Walker Robinson</span>
         <v-spacer></v-spacer>
-        <v-btn class="primary-gradient" icon size="30">
-          <IconHeart />
+        <v-btn
+          @click="handleClick"
+          class="bg-gray pa-2"
+          :class="{ active }"
+          icon
+          size="30"
+        >
+          <IconHeartOffer />
         </v-btn>
       </v-card-actions>
     </div>
@@ -41,16 +71,34 @@
 </template>
 
 <style lang="scss">
-  .carousel-card {
+  .offer-card {
     border: none !important;
-    box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.05) !important;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.05) !important;
+
+    &__static {
+      left: 20px;
+      bottom: 18px;
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 160%;
+    }
+
     &__title {
       padding: 0 !important;
       font-weight: 500;
       font-size: 18px;
       line-height: 22px;
       margin-bottom: 10px;
+      color: #2e2e2e;
+      transition: all 0.15s ease-in-out;
+    }
+
+    &:hover .offer-card__title {
       color: #1f74fd;
+    }
+
+    &__content {
+      background-color: #fafafa;
     }
 
     &__subtitle {
@@ -78,9 +126,14 @@
       color: #5f5f5f;
       margin-bottom: 16px;
     }
+
     &__actions {
       padding: 0;
 
+      .v-btn.active {
+        background: linear-gradient(210.64deg, #2485fd 6.88%, #1859fe 91.15%),
+          #2653f2 !important;
+      }
       img {
         width: 38px !important;
       }

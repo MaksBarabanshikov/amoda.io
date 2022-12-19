@@ -38,7 +38,7 @@
 
 <template>
   <v-card class="my-tab">
-    <v-tabs grow v-model="tab" bg-color="#F4F4F4" color="#5F5F5F">
+    <v-tabs grow v-model="tab" bg-color="#F4F4F4">
       <template v-for="tabItem in tabData" :key="tabItem.value">
         <v-tab :value="tabItem.value">{{ tabItem.title }}</v-tab>
       </template>
@@ -77,6 +77,24 @@
   .my-tab {
     box-shadow: none !important;
 
+    .v-slide-group__container {
+      border-radius: 10px 10px 0 0;
+      @media (max-width: 1000px) {
+        border-radius: 0 !important;
+      }
+    }
+
+    .v-btn--density-default {
+      color: #5f5f5f !important;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 17px;
+    }
+
+    .v-slide-group-item--active {
+      color: #fff !important;
+    }
+
     @media (max-width: 1000px) {
       padding: 20px 15px !important;
       background-color: #fff !important;
@@ -105,6 +123,10 @@
         }
       }
 
+      .icon {
+        min-width: 8px !important;
+      }
+
       @media (max-width: 1000px) {
         font-size: 11px !important;
         line-height: 230%;
@@ -120,6 +142,7 @@
     }
 
     .v-card-text {
+      background-color: #fff !important;
       @media (max-width: 1000px) {
         padding: 0 !important;
       }

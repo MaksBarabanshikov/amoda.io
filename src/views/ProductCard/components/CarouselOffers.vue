@@ -2,7 +2,7 @@
   import { Carousel, Slide, Navigation, Pagination } from 'vue3-carousel';
   import IconArrow from '@/icons/IconArrow.vue';
   import CarouselCard from '@/views/ProductCard/components/CarouselCard.vue';
-  import { reactive } from 'vue';
+  import { reactive, ref } from 'vue';
   import { useDisplay } from 'vuetify';
 
   const settings = reactive({
@@ -25,7 +25,43 @@
     },
   };
 
-  const slides = ['первый', 'второй', 'третий', 'четвертый', 'пятый', 'шестой'];
+  const slidesRes = [
+    {
+      id: '12',
+      active: true,
+    },
+    {
+      id: '13',
+      active: false,
+    },
+    {
+      id: '14',
+      active: false,
+    },
+    {
+      id: '15',
+      active: false,
+    },
+    {
+      id: '16',
+      active: false,
+    },
+    {
+      id: '17',
+      active: false,
+    },
+    {
+      id: '18',
+      active: false,
+    },
+  ];
+
+  const slides = ref(slidesRes);
+
+  const toggleFavourites = (id) => {
+    console.log('123');
+    return (slides.value[id].active = !slides.value[id].active);
+  };
 </script>
 <template>
   <div class="product-card__block product-card__test py-lg-10 mt-5">
@@ -33,8 +69,12 @@
       <h2 class="product-card__block-title mb-lg-7">Nearliness</h2>
       <div class="carousel-cards">
         <carousel :settings="settings" :breakpoints="breakpoints">
-          <slide v-for="slide in slides" :key="slide">
-            <carousel-card />
+          <slide v-for="(slide, index) in slides" :key="slide.id">
+            <carousel-card
+              :id="index"
+              :active="slide.active"
+              @toggle="toggleFavourites"
+            />
           </slide>
           <template #addons>
             <navigation v-if="!mobile">

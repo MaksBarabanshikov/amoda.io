@@ -117,6 +117,13 @@
     transform: translateX(50%) !important;
     background: transparent;
 
+    &-item {
+      margin-right: 11px !important;
+      &:last-child {
+        margin-right: 0 !important;
+      }
+    }
+
     &-button {
       &:after {
         transition: all 0.2s ease-in-out;

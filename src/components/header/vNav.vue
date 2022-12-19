@@ -8,3 +8,12 @@
     <v-list-item v-for="item in items" link :key="item" :title="item" rounded />
   </v-list>
 </template>
+
+<style>
+  .v-list-item-title {
+    color: #2e2e2e !important;
+    font-weight: 500 !important;
+    font-size: 14px !important;
+    line-height: 160% !important;
+  }
+</style>

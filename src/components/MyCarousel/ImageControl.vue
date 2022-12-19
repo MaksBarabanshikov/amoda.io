@@ -27,25 +27,17 @@
       itemsToShow: 3,
     },
   };
-
-  console.log(breakpoints);
 </script>
 
 <template>
   <div class="carousel-pagination product-card__block px-10 py-3">
-    <carousel
-      :settings="settings"
-      :breakpoints="breakpoints"
-      class="product-card__carousel"
-    >
+    <carousel :settings="settings" :breakpoints="breakpoints">
       <slide
         v-for="(slide, index) in slides"
         @click="$emit('changeSlide', index)"
         :key="slide"
       >
-        <div class="carousel__slide">
-          <v-img :src="slideExample" />
-        </div>
+        <img class="rounded-10" :src="slideExample" />
       </slide>
       <template #addons>
         <navigation>
@@ -69,23 +61,24 @@
   .carousel-pagination {
     .carousel__slide {
       width: 100%;
-      height: 100%;
+      height: 110px;
       padding: 0 5px 0 5px;
       border-radius: 10px;
       overflow: hidden;
       cursor: pointer;
+
+      img {
+        width: 100% !important;
+        height: 100% !important;
+      }
     }
 
     .carousel__prev {
-      left: -47px;
+      left: -47px !important;
     }
 
     .carousel__next {
-      right: -47px;
-    }
-
-    .v-img {
-      user-select: none;
+      right: -47px !important;
     }
   }
 </style>
