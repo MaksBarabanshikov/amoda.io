@@ -28,7 +28,7 @@
     <v-nav class="header__nav" :items="navItems" block />
     <v-list-item class="px-1 py-2">
       <v-btn
-        class="primary-gradient text-white rounded-lg"
+        class="add-advert primary-gradient text-white rounded-10"
         height="48"
         width="100%"
       >

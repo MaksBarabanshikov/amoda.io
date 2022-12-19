@@ -33,18 +33,18 @@
     ref="mainCarousel"
     class="product-card__carousel"
   >
-    <slide v-for="slide in slides" class="px-2" :key="slide">
+    <slide v-for="slide in slides" class="pe-2" :key="slide">
       <v-img :src="slideExample" />
     </slide>
     <template #addons>
       <navigation>
         <template #prev>
-          <v-btn class="white-arrow" variant="elevated" icon size="65">
+          <v-btn class="white-arrow" variant="flat" icon size="65">
             <IconArrow type="prev" />
           </v-btn>
         </template>
         <template #next>
-          <v-btn class="white-arrow" variant="elevated" icon size="65">
+          <v-btn class="white-arrow" variant="flat" icon size="65">
             <IconArrow type="next" />
           </v-btn>
         </template>

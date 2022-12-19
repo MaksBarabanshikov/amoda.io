@@ -111,25 +111,25 @@
 <style lang="scss">
   .product-params {
     .v-list-item-title {
-      font-weight: 500;
-      font-size: 22px;
-      line-height: 130%;
+      font-weight: 500 !important;
+      font-size: 22px !important;
+      line-height: 130% !important;
       @media screen and (max-width: 1000px) {
-        font-size: 16px;
-        color: #2e2e2e;
+        font-size: 16px !important;
+        color: #2e2e2e !important;
       }
 
       @media screen and (max-width: 568px) {
-        font-size: 14px;
+        font-size: 14px !important;
       }
     }
     .v-list-item-subtitle {
-      font-weight: 400;
-      font-size: 16px;
-      line-height: 130%;
+      font-weight: 400 !important;
+      font-size: 16px !important;
+      line-height: 130% !important;
+      color: #5f5f5f !important;
       @media screen and (max-width: 1000px) {
-        font-size: 14px;
-        color: #5f5f5f;
+        font-size: 14px !important;
       }
     }
   }

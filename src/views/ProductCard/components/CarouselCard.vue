@@ -2,6 +2,7 @@
   import person from '@/assets/img/image/person-card.png';
   import IconPhoto from '@/icons/iconPhoto.vue';
   import IconHeartOffer from '@/icons/iconHeartOffer.vue';
+  import IconLocation from '../../../icons/iconLocation.vue';
 
   const emit = defineEmits(['toggle']);
 
@@ -36,12 +37,14 @@
       </div>
     </v-sheet>
     <div class="offer-card__content p-4">
-      <v-card-title class="offer-card__title">
+      <v-card-title class="offer-card__title text-left">
         The Hills at Oakwood Apartment Homes
       </v-card-title>
 
-      <v-card-subtitle class="offer-card__subtitle text-left">
-        Jersey Pike, Chattanooga,
+      <v-card-subtitle
+        class="offer-card__subtitle text-left d-flex align-center"
+      >
+        <icon-location class="icon" />Jersey Pike, Chattanooga,
       </v-card-subtitle>
 
       <h3 class="offer-card__price text-left">1000 TL</h3>
@@ -53,12 +56,12 @@
       </p>
 
       <v-card-actions class="offer-card__actions flex align-center h-[38px]">
-        <v-img width="10" :src="person" />
+        <v-img :src="person" />
         <span>Walker Robinson</span>
         <v-spacer></v-spacer>
         <v-btn
           @click="handleClick"
-          class="bg-gray pa-2"
+          class="offer-card__actions_btn bg-gray pa-2"
           :class="{ active }"
           icon
           size="30"
@@ -85,16 +88,29 @@
 
     &__title {
       padding: 0 !important;
-      font-weight: 500;
-      font-size: 18px;
-      line-height: 22px;
+      font-weight: 500 !important;
+      font-size: 18px !important;
+      line-height: 22px !important;
+      white-space: normal;
       margin-bottom: 10px;
       color: #2e2e2e;
       transition: all 0.15s ease-in-out;
     }
 
+    .offer-card__content {
+      transition: background-color 0.15s ease-in-out;
+    }
+
     &:hover .offer-card__title {
       color: #1f74fd;
+    }
+
+    .v-card__overlay {
+      opacity: 0 !important;
+    }
+
+    &:hover .offer-card__content {
+      background-color: #fff !important;
     }
 
     &__content {
@@ -108,6 +124,10 @@
       font-size: 12px;
       line-height: 160%;
       color: #5f5f5f;
+
+      .icon {
+        margin-right: 4px;
+      }
     }
 
     &__price {
@@ -129,6 +149,24 @@
 
     &__actions {
       padding: 0;
+
+      .v-img {
+        max-width: 38px;
+        margin-right: 8px;
+      }
+
+      span {
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 160%;
+        color: #2e2e2e !important;
+      }
+
+      .v-btn {
+        svg {
+          margin-top: 1px;
+        }
+      }
 
       .v-btn.active {
         background: linear-gradient(210.64deg, #2485fd 6.88%, #1859fe 91.15%),

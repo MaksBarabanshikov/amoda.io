@@ -143,7 +143,7 @@
       h6 {
         color: #2e2e2e;
         font-weight: 500;
-        font-size: 18px;
+        font-size: 14px;
         line-height: 150%;
 
         @media (max-width: 1000px) {
@@ -161,9 +161,9 @@
         }
 
         span {
-          color: #2e2e2e;
-          font-weight: 400;
-          font-size: 18px;
+          color: #5f5f5f;
+          font-weight: 500;
+          font-size: 14px;
           line-height: 150%;
 
           @media (max-width: 1000px) {

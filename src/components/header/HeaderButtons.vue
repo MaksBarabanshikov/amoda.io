@@ -19,11 +19,23 @@
 
     <v-btn
       v-if="!mobile"
-      class="primary-gradient text-white rounded-10"
+      class="add-advert primary-gradient text-white rounded-10"
       height="48"
+      width="240"
     >
-      <IconPlus class="me-2" />
+      <IconPlus />
       <span>Добавить объявление</span>
     </v-btn>
   </div>
 </template>
+
+<style lang="scss">
+  .add-advert {
+    padding: 14px 0 17px 0;
+
+    svg {
+      margin-top: 1px;
+      margin-right: 6px !important;
+    }
+  }
+</style>
