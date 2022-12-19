@@ -23,7 +23,7 @@
 </script>
 
 <template>
-  <v-col class="pb-lg-2 px-0" sm="12" lg="3">
+  <v-col class="ps-lg-4" sm="12" lg="3">
     <div class="sticky-johny sticky top-20">
       <v-sheet color="#fff" rounded class="sticky-johny__head">
         <h3>150 000 $</h3>

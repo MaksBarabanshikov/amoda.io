@@ -18,7 +18,7 @@
         ><icon-location class="me-2" /> Antalya, Alanya, Avsallar</span
       >
     </div>
-    <v-row class="relative mt-8">
+    <v-row no-gutters class="relative mt-8">
       <card-content />
       <sticky-johny v-if="!mobile" />
     </v-row>
