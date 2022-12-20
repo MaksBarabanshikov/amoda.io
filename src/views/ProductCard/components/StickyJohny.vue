@@ -23,7 +23,7 @@
 </script>
 
 <template>
-  <v-col class="ps-lg-4" sm="12" lg="3">
+  <v-col sm="12" lg="3" class="pa-0">
     <div class="sticky-johny sticky top-20">
       <v-sheet color="#fff" rounded class="sticky-johny__head">
         <h3>150 000 $</h3>
@@ -36,11 +36,11 @@
             </div>
           </v-list-item>
         </v-list>
-        <span class="d-flex align-center"
+        <span class="sticky-johny__monitor-price d-flex align-center"
           ><icon-bell class="me-2" /> Monitor price changes
         </span>
       </v-sheet>
-      <div class="sticky-johny__body mt-4">
+      <div class="sticky-johny__body">
         <div class="sticky-johny__body_info">
           <div class="d-flex">
             <v-img :src="person" class="rounded-circle mr-3" />
@@ -77,7 +77,7 @@
           </v-btn>
         </div>
       </div>
-      <div class="sticky-johny__footer mt-4 text-center p-5">
+      <div class="sticky-johny__footer text-center p-5">
         <v-btn class="bg-gray me-2" variant="plain" icon size="42">
           <IconShare />
         </v-btn>
@@ -98,9 +98,16 @@
   }
 
   .sticky-johny {
+    padding-left: 20px;
+
+    @media (max-width: 1279px) {
+      margin-top: 20px;
+      padding-left: 0;
+    }
     & > div {
       background: #fff;
       border-radius: 10px;
+      margin-bottom: 20px;
     }
     &__head,
     &__body {
@@ -113,6 +120,11 @@
 
     &__footer {
       @apply p-5;
+
+      .v-btn:hover {
+        background: linear-gradient(210.64deg, #2485fd 6.88%, #1859fe 91.15%),
+          #2653f2 !important;
+      }
     }
 
     &__head {
@@ -171,6 +183,19 @@
             font-size: 13px;
             line-height: 150%;
             margin-top: 3px;
+          }
+        }
+      }
+
+      .sticky-johny__monitor-price {
+        transition: all 0.15s ease-in-out;
+        cursor: pointer;
+
+        &:hover {
+          color: #1f74fd;
+
+          .icon {
+            color: #1f74fd;
           }
         }
       }

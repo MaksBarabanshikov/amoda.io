@@ -84,13 +84,17 @@
 </script>
 
 <template>
-  <div class="product-card__block">
-    <v-list class="product-params d-flex justify-space-between text-center">
-      <v-list-item v-for="param in params" :key="param.subtitle">
-        <v-list-item-title
+  <div class="product-card__block offer-param">
+    <v-list
+      class="product-params d-flex justify-space-between text-center pa-0"
+    >
+      <v-list-item v-for="param in params" :key="param.subtitle" class="pa-0">
+        <v-list-item-title class="text-center"
           >{{ param.title }}<sup>{{ param.sup }}</sup></v-list-item-title
         >
-        <v-list-item-subtitle>{{ param.subtitle }}</v-list-item-subtitle>
+        <v-list-item-subtitle class="text-center">{{
+          param.subtitle
+        }}</v-list-item-subtitle>
       </v-list-item>
     </v-list>
   </div>
@@ -128,6 +132,37 @@
 </template>
 
 <style lang="scss">
+  .offer-param {
+    padding-right: 128px !important;
+
+    @media (max-width: 776px) {
+      padding-right: 40px !important;
+    }
+  }
+  .product-params {
+    .v-list-item-title {
+      font-weight: 500 !important;
+      font-size: 22px !important;
+      line-height: 130% !important;
+      @media screen and (max-width: 1000px) {
+        font-size: 16px !important;
+        color: #2e2e2e !important;
+      }
+
+      @media screen and (max-width: 568px) {
+        font-size: 14px !important;
+      }
+    }
+    .v-list-item-subtitle {
+      font-weight: 400 !important;
+      font-size: 18px !important;
+      line-height: 130% !important;
+      color: #5f5f5f !important;
+      @media screen and (max-width: 1000px) {
+        font-size: 14px !important;
+      }
+    }
+  }
   .product-card__info {
     .v-list {
       display: grid;

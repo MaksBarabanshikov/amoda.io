@@ -19,7 +19,7 @@
 
     <v-btn
       v-if="!mobile"
-      class="add-advert primary-gradient text-white rounded-10"
+      class="my-btn primary-gradient text-white rounded-10"
       height="48"
       width="240"
     >
@@ -28,14 +28,3 @@
     </v-btn>
   </div>
 </template>
-
-<style lang="scss">
-  .add-advert {
-    padding: 14px 0 17px 0;
-
-    svg {
-      margin-top: 1px;
-      margin-right: 6px !important;
-    }
-  }
-</style>

@@ -59,40 +59,37 @@
   const slides = ref(slidesRes);
 
   const toggleFavourites = (id) => {
-    console.log('123');
     return (slides.value[id].active = !slides.value[id].active);
   };
 </script>
 <template>
-  <div class="product-card__block product-card__test py-lg-10 mt-5">
-    <div class="px-lg-12">
-      <h2 class="product-card__block-title mb-lg-7">Nearliness</h2>
-      <div class="carousel-cards">
-        <carousel :settings="settings" :breakpoints="breakpoints">
-          <slide v-for="(slide, index) in slides" :key="slide.id">
-            <carousel-card
-              :id="index"
-              :active="slide.active"
-              @toggle="toggleFavourites"
-            />
-          </slide>
-          <template #addons>
-            <navigation v-if="!mobile">
-              <template #prev>
-                <v-btn class="blue-arrow" variant="flat" icon size="40">
-                  <IconArrow type="prev" />
-                </v-btn>
-              </template>
-              <template #next>
-                <v-btn class="blue-arrow" variant="flat" icon size="40">
-                  <IconArrow type="next" />
-                </v-btn>
-              </template>
-            </navigation>
-            <pagination v-if="mobile" />
-          </template>
-        </carousel>
-      </div>
+  <div class="product-card__block product-card__test pt-lg-10 pb-0 mt-5">
+    <h2 class="product-card__block-title mb-lg-7">Nearliness</h2>
+    <div class="carousel-cards">
+      <carousel :settings="settings" :breakpoints="breakpoints">
+        <slide v-for="(slide, index) in slides" :key="slide.id">
+          <carousel-card
+            :id="index"
+            :active="slide.active"
+            @toggle="toggleFavourites"
+          />
+        </slide>
+        <template #addons>
+          <navigation v-if="!mobile">
+            <template #prev>
+              <v-btn class="blue-arrow" variant="flat" icon size="40">
+                <IconArrow type="prev" />
+              </v-btn>
+            </template>
+            <template #next>
+              <v-btn class="blue-arrow" variant="flat" icon size="40">
+                <IconArrow type="next" />
+              </v-btn>
+            </template>
+          </navigation>
+          <pagination v-if="mobile" />
+        </template>
+      </carousel>
     </div>
   </div>
 </template>
@@ -103,7 +100,7 @@
     }
 
     .carousel__viewport {
-      padding: 10px 0 10px 0;
+      padding: 10px 0 40px 0;
     }
 
     .carousel__pagination {
@@ -136,8 +133,7 @@
       border-radius: 10px;
       @apply cursor-pointer;
       &:hover {
-        box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1),
-          0 2px 4px -2px rgb(0 0 0 / 0.1) !important;
+        box-shadow: 0 4px 35px rgba(0, 0, 0, 0.05) !important;
       }
     }
 

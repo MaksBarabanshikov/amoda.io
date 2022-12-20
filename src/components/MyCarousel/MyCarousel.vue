@@ -33,7 +33,11 @@
     ref="mainCarousel"
     class="product-card__carousel"
   >
-    <slide v-for="slide in slides" class="pe-2" :key="slide">
+    <slide
+      v-for="slide in slides"
+      class="rounded-10 overflow-hidden"
+      :key="slide"
+    >
       <v-img :src="slideExample" />
     </slide>
     <template #addons>

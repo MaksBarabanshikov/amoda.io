@@ -34,10 +34,38 @@ h6 {
 
 .primary-gradient {
   background: linear-gradient(210.64deg, #2485fd 6.88%, #1859fe 91.15%), #2653f2 !important;
+  transition: none;
+  &:hover {
+    background: #2653F2 !important;
+  }
+  &:hover > .v-btn__overlay {
+    opacity: 0 !important;
+  }
 }
 
 .green-gradient {
   background: linear-gradient(210.64deg, #52cf5c 6.88%, #2bb641 91.15%), #2653f2 !important;
+  transition: none;
+  &:hover {
+    background: #38BE4A !important;
+  }
+  &:hover > .v-btn__overlay {
+    opacity: 0 !important;
+  }
+}
+
+.my-btn {
+  font-weight: 600 !important;
+  font-size: 14px !important;
+  line-height: 17px !important;
+  text-align: center !important;
+  color: #ffffff !important;
+  padding: 14px 0 17px 0;
+
+  svg {
+    margin-top: 1px;
+    margin-right: 6px !important;
+  }
 }
 
 .bg-gray {

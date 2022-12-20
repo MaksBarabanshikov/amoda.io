@@ -3,6 +3,7 @@
   import IconPhoto from '@/icons/iconPhoto.vue';
   import IconHeartOffer from '@/icons/iconHeartOffer.vue';
   import IconLocation from '../../../icons/iconLocation.vue';
+  import IconVideo from '../../../icons/iconVideo.vue';
 
   const emit = defineEmits(['toggle']);
 
@@ -15,7 +16,7 @@
 </script>
 
 <template>
-  <v-card link rounded class="offer-card w-100">
+  <v-card link rounded class="offer-card w-100" elevation="0">
     <v-sheet class="position-relative">
       <v-img
         transition="500"
@@ -31,7 +32,7 @@
           <span>10</span>
         </div>
         <div class="d-flex align-center">
-          <icon-photo class="me-1" />
+          <icon-video class="me-1" />
           <span>10</span>
         </div>
       </div>
