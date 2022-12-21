@@ -18,7 +18,7 @@
         <v-col
           cols="12"
           lg="2"
-          class="d-flex flex-column text-lg-left flex-lg-row align-center p-0"
+          class="d-flex flex-column text-lg-left flex-lg-row align-center pa-0"
         >
           <a class="d-flex align-center cursor-pointer mb-5 mb-lg-0 me-lg-4">
             <IconWallet class="me-1" />

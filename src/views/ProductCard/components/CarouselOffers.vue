@@ -63,7 +63,7 @@
   };
 </script>
 <template>
-  <div class="product-card__block product-card__test pt-lg-10 pb-0 mt-5">
+  <div class="product-card__block pt-lg-10 pb-0 mt-5">
     <h2 class="product-card__block-title mb-lg-7">Nearliness</h2>
     <div class="carousel-cards">
       <carousel :settings="settings" :breakpoints="breakpoints">
@@ -104,7 +104,7 @@
     }
 
     .carousel__pagination {
-      bottom: -20px !important;
+      bottom: 13px !important;
 
       &-button {
         &:after {
@@ -131,7 +131,7 @@
     .v-card {
       box-shadow: none !important;
       border-radius: 10px;
-      @apply cursor-pointer;
+      cursor: pointer;
       &:hover {
         box-shadow: 0 4px 35px rgba(0, 0, 0, 0.05) !important;
       }

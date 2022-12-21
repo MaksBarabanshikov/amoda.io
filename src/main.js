@@ -1,5 +1,6 @@
 import { createApp } from 'vue';
 import { createRouter, createWebHistory } from 'vue-router';
+import { createPinia } from 'pinia';
 import App from './App.vue';
 import ProductCardView from '@/views/ProductCard/ProductCardView.vue';
 import TestView from '@/views/TestView.vue';
@@ -10,6 +11,8 @@ import 'vuetify/styles';
 import '@mdi/font/css/materialdesignicons.min.css';
 import { createVuetify } from 'vuetify';
 import { aliases, mdi } from 'vuetify/iconsets/mdi';
+
+const pinia = createPinia();
 
 const router = createRouter({
   history: createWebHistory(),
@@ -35,4 +38,4 @@ const vuetify = createVuetify({
 
 const app = createApp(App);
 
-app.use(vuetify).use(router).mount('#app');
+app.use(vuetify).use(pinia).use(router).mount('#app');

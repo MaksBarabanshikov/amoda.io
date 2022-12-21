@@ -4,10 +4,15 @@
   import CarouselOffers from '@/views/ProductCard/components/CarouselOffers.vue';
   import IconLocation from '@/icons/iconLocation.vue';
   import { useDisplay } from 'vuetify';
+  import { getCurrentRealty } from '../../services/realty.service.js';
+
+  const { data, isLoading, error } = getCurrentRealty();
 
   const { mobile } = useDisplay();
 </script>
 <template>
+  <pre v-if="!isLoading"> {{ data }} </pre>
+  <pre v-if="error">{{ error }}</pre>
   <section class="product-card">
     <div class="product-card__title">
       <h1 class="mb-3">

@@ -37,7 +37,7 @@
         </div>
       </div>
     </v-sheet>
-    <div class="offer-card__content p-4">
+    <div class="offer-card__content pa-4">
       <v-card-title class="offer-card__title text-left">
         The Hills at Oakwood Apartment Homes
       </v-card-title>

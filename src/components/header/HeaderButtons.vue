@@ -8,7 +8,7 @@
 </script>
 
 <template>
-  <div class="header__buttons flex align-center justify-end">
+  <div class="header__buttons d-flex align-center justify-end">
     <v-btn class="primary-gradient me-2" icon size="36">
       <IconHeart />
     </v-btn>
