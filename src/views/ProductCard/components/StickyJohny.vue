@@ -24,7 +24,7 @@
 
 <template>
   <v-col sm="12" lg="3" class="pa-0">
-    <div class="sticky-johny sticky top-20">
+    <div class="sticky-johny sticky">
       <v-sheet color="#fff" rounded class="sticky-johny__head">
         <h3>150 000 $</h3>
         <span>from 1500 $/month in mortgage</span>
@@ -45,18 +45,20 @@
           <div class="d-flex">
             <v-img :src="person" class="rounded-circle mr-3" />
             <div>
-              <div class="person leading-5 mb-1">
+              <div class="person mb-1">
                 <span>Private person</span>
                 <h6>Vladimir Smirnov</h6>
               </div>
-              <a class="text-primary font-medium"> 7 advertisements </a>
+              <a class="text-primary"> 7 advertisements </a>
             </div>
           </div>
-          <img
-            class="sticky-johny__body_company ma-auto mt-8 mb-2"
-            :src="glorax"
-            alt=""
-          />
+          <div class="text-center">
+            <img
+              class="sticky-johny__body_company mx-auto mt-8 mb-2"
+              :src="glorax"
+              alt="glorax"
+            />
+          </div>
           <div class="sticky-johny__body_license d-block text-center mb-3">
             Licence: <span>474648837373</span>
           </div>
@@ -119,7 +121,7 @@
     }
 
     &__footer {
-      @apply p-5;
+      padding: 20px;
 
       .v-btn:hover {
         background: linear-gradient(210.64deg, #2485fd 6.88%, #1859fe 91.15%),
@@ -214,7 +216,7 @@
             line-height: 160%;
             color: #5f5f5f;
           }
-          h4 {
+          h6 {
             font-weight: 500;
             font-size: 16px;
             line-height: 160%;

@@ -59,7 +59,7 @@
                   <span>
                     {{ content.text }}
                   </span>
-                  <v-spacer class="border-dotted" />
+                  <v-spacer class="dotted" />
                   <div class="icon">
                     <IconCheck :checked="content.checked" />
                   </div>
@@ -105,7 +105,7 @@
       @media (max-width: 764px) {
         max-width: 300px;
       }
-      .border-dotted {
+      .dotted {
         position: relative;
         overflow: hidden;
         width: 100%;
