@@ -1,6 +1,5 @@
 <script setup>
   import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel';
-  import slideExample from '@/assets/img/image/slider-example.jpg';
   import IconArrow from '@/icons/IconArrow.vue';
   import ImageControl from '@/components/MyCarousel/ImageControl.vue';
   import { reactive, ref } from 'vue';
@@ -38,7 +37,7 @@
       class="rounded-10 overflow-hidden"
       :key="slide"
     >
-      <v-img :src="slideExample" />
+      <v-img style="height: 500px" :src="slide.src" />
     </slide>
     <template #addons>
       <navigation>

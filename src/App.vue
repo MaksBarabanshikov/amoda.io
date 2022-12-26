@@ -5,7 +5,7 @@
 </script>
 
 <template>
-  <v-app theme="">
+  <v-app theme="default">
     <v-header />
     <v-main class="mt-1">
       <v-container>

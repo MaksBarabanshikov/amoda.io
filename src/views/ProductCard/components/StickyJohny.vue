@@ -1,38 +1,62 @@
 <script setup>
-  import person from '@/assets/img/image/person.jpg';
   import glorax from '@/assets/img/image/glorax.png';
   import IconHeart from '@/icons/iconHeart.vue';
   import IconShare from '@/icons/iconShare.vue';
   import IconPrint from '@/icons/iconPrint.vue';
   import IconBell from '@/icons/iconBell.vue';
+  import { useProductCardStore } from '@/store/productCardStore.js';
+  // import { useMainStore } from '@/store/mainStore.js';
+  import { storeToRefs } from 'pinia';
+  import { computed } from 'vue';
 
-  const list = [
-    {
-      title: 'Deposit: ',
-      content: '800 $',
-    },
-    {
-      title: 'Commission: ',
-      content: '800 $',
-    },
-    {
-      title: 'Aidat: ',
-      content: '60 $',
-    },
-  ];
+  const productStore = useProductCardStore();
+  // const mainStore = useMainStore();
+
+  const { productData } = storeToRefs(productStore);
+
+  // const list = [
+  //   {
+  //     title: 'Deposit: ',
+  //     content: '800 $',
+  //   },
+  //   {
+  //     title: 'Commission: ',
+  //     content: '800 $',
+  //   },
+  //   {
+  //     title: 'Aidat: ',
+  //     content: '60 $',
+  //   },
+  // ];
+
+  const getPrices = computed(() => productData.value.data.prices.USD);
+
+  const getUser = computed(() => productData.value.data.user);
 </script>
 
 <template>
   <v-col sm="12" lg="3" class="pa-0">
     <div class="sticky-johny sticky">
       <v-sheet color="#fff" rounded class="sticky-johny__head">
-        <h3>150 000 $</h3>
-        <span>from 1500 $/month in mortgage</span>
+        <h3>{{ getPrices.full }} $</h3>
+        <span>from {{ getPrices.full }} $/month in mortgage</span>
         <v-list>
-          <v-list-item v-for="item in list" :key="item.title" min-height="26">
+          <v-list-item min-height="26">
             <div class="d-flex align-center">
-              <h6>{{ item.title }}&nbsp;</h6>
-              <span>{{ item.content }}</span>
+              <h6>Deposit:&nbsp;</h6>
+              <span>{{ getPrices.deposit }} $</span>
+            </div>
+          </v-list-item>
+          <v-list-item min-height="26">
+            <div class="d-flex align-center">
+              <h6>Commission:&nbsp;</h6>
+              <span>{{ getPrices.commission }} $</span>
+            </div>
+          </v-list-item>
+          <v-list-item min-height="26">
+            <div class="d-flex align-center">
+              <h6>Aidat:&nbsp;</h6>
+              <span>{{ getPrices.aidat }} $</span>
             </div>
           </v-list-item>
         </v-list>
@@ -43,13 +67,15 @@
       <div class="sticky-johny__body">
         <div class="sticky-johny__body_info">
           <div class="d-flex">
-            <v-img :src="person" class="rounded-circle mr-3" />
+            <v-img :src="getUser.photo" class="rounded-circle mr-3" />
             <div>
               <div class="person mb-1">
-                <span>Private person</span>
-                <h6>Vladimir Smirnov</h6>
+                <span>{{ getUser.type }}</span>
+                <h6>{{ getUser.name }}</h6>
               </div>
-              <a class="text-primary"> 7 advertisements </a>
+              <a class="text-primary">
+                {{ getUser.adv_count }} advertisements
+              </a>
             </div>
           </div>
           <div class="text-center">

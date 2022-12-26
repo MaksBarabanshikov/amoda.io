@@ -4,3 +4,11 @@
 <template>
   <img :src="logo" alt="amoda.io" />
 </template>
+
+<style lang="scss" scoped>
+  img {
+    @media (max-width: 335px) {
+      width: 144px;
+    }
+  }
+</style>

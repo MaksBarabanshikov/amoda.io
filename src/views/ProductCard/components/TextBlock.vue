@@ -88,7 +88,11 @@
     <v-list
       class="product-params d-flex justify-space-between text-center pa-0"
     >
-      <v-list-item v-for="param in params" :key="param.subtitle" class="pa-0">
+      <v-list-item
+        v-for="param in params"
+        :key="param.subtitle"
+        class="pr-4 pr-md-0 pa-0"
+      >
         <v-list-item-title class="text-center"
           >{{ param.title }}<sup>{{ param.sup }}</sup></v-list-item-title
         >
