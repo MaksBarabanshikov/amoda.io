@@ -4,6 +4,7 @@
   import ImageControl from '@/components/MyCarousel/ImageControl.vue';
   import { reactive, ref } from 'vue';
   import { useDisplay } from 'vuetify';
+  import plug from '@/assets/img/image/slider-example.jpg';
 
   defineProps({
     slides: Array,
@@ -37,7 +38,7 @@
       class="rounded-10 overflow-hidden"
       :key="slide"
     >
-      <v-img style="height: 500px" :src="slide.src" />
+      <v-img style="height: 500px" :lazy-src="plug" :src="slide.src" />
     </slide>
     <template #addons>
       <navigation>

@@ -1,9 +1,13 @@
 import { defineStore } from 'pinia';
-import { ref } from 'vue';
+import { computed, ref } from 'vue';
 
 export const useProductCardStore = defineStore('productCardStore', () => {
   const productData = ref(null);
   const loading = ref(false);
+
+  const description = computed(() => {
+    return productData.value.data.description;
+  });
 
   const initProductCard = (payload) => {
     return (productData.value = payload);
@@ -14,6 +18,7 @@ export const useProductCardStore = defineStore('productCardStore', () => {
   return {
     productData,
     loading,
+    description,
     initProductCard,
     toggleLoading,
   };
