@@ -45,11 +45,11 @@
       </template>
     </v-tabs>
     <v-card-text>
-      <v-lazy>
-        <v-window v-model="tab">
-          <template v-for="(value, key) in tabData" :key="key">
-            <v-window-item :value="key">
-              <h2 class="product-card__block-title">{{ key }}</h2>
+      <v-window v-model="tab">
+        <template v-for="(value, key) in tabData" :key="key">
+          <v-window-item :value="key">
+            <h2 class="product-card__block-title">{{ key }}</h2>
+            <v-lazy min-height="80">
               <v-list class="grid grid-cols-4">
                 <v-list-item
                   min-height="25"
@@ -68,10 +68,10 @@
                   </v-list-item-title>
                 </v-list-item>
               </v-list>
-            </v-window-item>
-          </template>
-        </v-window>
-      </v-lazy>
+            </v-lazy>
+          </v-window-item>
+        </template>
+      </v-window>
     </v-card-text>
   </v-card>
 </template>

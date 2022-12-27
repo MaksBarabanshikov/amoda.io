@@ -1,6 +1,7 @@
 <script setup>
   import { Carousel, Slide, Navigation } from 'vue3-carousel';
   import IconArrow from '@/icons/IconArrow.vue';
+  import plug from '@/assets/img/image/slider-example.jpg';
 
   defineEmits(['changeSlide']);
 
@@ -36,7 +37,7 @@
         @click="$emit('changeSlide', index)"
         :key="slide"
       >
-        <img class="rounded-10" :src="slide.src" />
+        <v-img :lazy-src="plug" class="rounded-10" :src="slide.src" />
       </slide>
       <template #addons>
         <navigation>

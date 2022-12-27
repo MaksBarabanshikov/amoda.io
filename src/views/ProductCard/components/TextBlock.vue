@@ -2,6 +2,8 @@
   import InformationIcon from '@/icons/information/informationIcon.vue';
   import StickyJohny from '@/views/ProductCard/components/StickyJohny.vue';
   import { useDisplay } from 'vuetify';
+  import { useProductCardStore } from '@/store/productCardStore.js';
+  import { storeToRefs } from 'pinia';
 
   const { mobile } = useDisplay();
 
@@ -81,6 +83,10 @@
       type: 'bath',
     },
   ];
+
+  const store = useProductCardStore();
+
+  const { description } = storeToRefs(store);
 </script>
 
 <template>
@@ -104,18 +110,19 @@
   </div>
   <sticky-johny class="w-100" v-if="mobile" />
   <div class="product-card__block">
-    <h2 class="product-card__block-title">Ultra luxurious</h2>
-    <p class="product-card__block-text">
-      Our pet-friendly community offers 2 resort-style swimming pools and a
-      fully-equipped, 24-hour fitness center. Located within the highly regarded
-      Plano Independent School District, Camden Legacy Creek offers easy access
-      to the Dallas North Tollway and is only minutes from Stonebriar and
-      Willowbend Malls with direct access to the Bluebonnet Walking Trail.
-      Camden residents can take advantage of an exclusive discount with CORT to
-      rent furniture and accessories for your apartment home. Pricing and
-      availability are subject to change until a quote is saved. Call or visit
-      camdenliving.com to save a quote.
-    </p>
+    <div v-html="description" />
+    <!--    <h2 class="product-card__block-title">Ultra luxurious</h2>-->
+    <!--    <p class="product-card__block-text">-->
+    <!--      Our pet-friendly community offers 2 resort-style swimming pools and a-->
+    <!--      fully-equipped, 24-hour fitness center. Located within the highly regarded-->
+    <!--      Plano Independent School District, Camden Legacy Creek offers easy access-->
+    <!--      to the Dallas North Tollway and is only minutes from Stonebriar and-->
+    <!--      Willowbend Malls with direct access to the Bluebonnet Walking Trail.-->
+    <!--      Camden residents can take advantage of an exclusive discount with CORT to-->
+    <!--      rent furniture and accessories for your apartment home. Pricing and-->
+    <!--      availability are subject to change until a quote is saved. Call or visit-->
+    <!--      camdenliving.com to save a quote.-->
+    <!--    </p>-->
   </div>
   <div class="product-card__block product-card__info">
     <h2 class="product-card__block-title">Information</h2>
