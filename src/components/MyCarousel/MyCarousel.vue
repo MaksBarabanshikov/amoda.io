@@ -37,7 +37,7 @@
       class="rounded-10 overflow-hidden"
       :key="slide"
     >
-      <v-img style="height: 500px" :src="slide.src" />
+      <v-img style="height: 500px" :src="slide.src" cover />
     </slide>
     <template #addons>
       <navigation>
