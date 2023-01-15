@@ -8,15 +8,11 @@
 
   const store = useProductCardStore();
 
-  const { productData } = storeToRefs(store);
+  const { sliderItems, productData } = storeToRefs(store);
 </script>
 <template>
   <v-col class="product-card__content" md="12" lg="9">
-    <my-carousel
-      :colors="colors"
-      :slides="productData.data.photos"
-      control-image
-    />
+    <my-carousel :slides="sliderItems" control-image />
     <text-block />
     <my-tabs :tab-data="productData.data.features" />
     <div class="product-card__map mb-0">

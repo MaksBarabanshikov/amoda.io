@@ -37,7 +37,7 @@
         @click="$emit('changeSlide', index)"
         :key="slide"
       >
-        <v-img :lazy-src="plug" class="rounded-10" :src="slide.src" />
+        <v-img class="rounded-10" :src="slide.src" :lazy-src="plug" cover />
       </slide>
       <template #addons>
         <navigation>

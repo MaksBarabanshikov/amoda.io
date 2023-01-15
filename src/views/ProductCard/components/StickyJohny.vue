@@ -67,13 +67,19 @@
       <div class="sticky-johny__body">
         <div class="sticky-johny__body_info">
           <div class="d-flex">
-            <v-img :src="getUser.photo" class="rounded-circle mr-3" />
+            <v-img
+              :src="getUser.photo"
+              class="rounded-circle mr-3"
+              sizes="80"
+              alt="user"
+              cover
+            />
             <div>
               <div class="person mb-1">
                 <span>{{ getUser.type }}</span>
                 <h6>{{ getUser.name }}</h6>
               </div>
-              <a class="text-primary">
+              <a style="cursor: pointer" class="text-primary">
                 {{ getUser.adv_count }} advertisements
               </a>
             </div>

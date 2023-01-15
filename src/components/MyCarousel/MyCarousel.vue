@@ -37,7 +37,21 @@
       class="rounded-10 overflow-hidden"
       :key="slide"
     >
-      <v-img style="height: 500px" :src="slide.src" cover />
+      <v-img
+        v-if="slide.mime === 'image/jpeg'"
+        style="height: 500px"
+        :src="slide.src"
+        cover
+      />
+      <div style="height: 500px" class="video-slider">
+        <video
+          v-if="slide.mime === 'video/mp4'"
+          class="w-100 h-100 rounded-10"
+          controls
+        >
+          <source :src="slide.src" :type="slide.mime" />
+        </video>
+      </div>
     </slide>
     <template #addons>
       <navigation>

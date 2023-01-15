@@ -49,26 +49,24 @@
         <template v-for="(value, key) in tabData" :key="key">
           <v-window-item :value="key">
             <h2 class="product-card__block-title">{{ key }}</h2>
-            <v-lazy min-height="80">
-              <v-list class="grid grid-cols-4">
-                <v-list-item
-                  min-height="25"
-                  class="text-dark"
-                  v-for="(value, key) in value"
-                  :key="key"
-                >
-                  <v-list-item-title class="d-flex align-center">
-                    <span>
-                      {{ key }}
-                    </span>
-                    <v-spacer class="dotted" />
-                    <div class="icon">
-                      <IconCheck :checked="value" />
-                    </div>
-                  </v-list-item-title>
-                </v-list-item>
-              </v-list>
-            </v-lazy>
+            <v-list class="grid grid-cols-4">
+              <v-list-item
+                min-height="25"
+                class="text-dark"
+                v-for="(value, key) in value"
+                :key="key"
+              >
+                <v-list-item-title class="d-flex align-center">
+                  <span>
+                    {{ key }}
+                  </span>
+                  <v-spacer class="dotted" />
+                  <div class="icon">
+                    <IconCheck :checked="value" />
+                  </div>
+                </v-list-item-title>
+              </v-list-item>
+            </v-list>
           </v-window-item>
         </template>
       </v-window>

@@ -7,103 +7,26 @@
 
   const { mobile } = useDisplay();
 
-  const params = [
-    {
-      title: '260 м',
-      sup: '2',
-      subtitle: 'total area',
-    },
-    {
-      title: '240 м',
-      sup: '2',
-      subtitle: 'living space',
-    },
-    {
-      title: '40 м',
-      sup: '2',
-      subtitle: 'kitchen',
-    },
-    {
-      title: '9',
-      subtitle: 'floor',
-    },
-    {
-      title: 'No',
-      subtitle: 'elevator',
-    },
-  ];
-
-  const info = [
-    {
-      text: 'Children allowed',
-      type: 'pram',
-    },
-    {
-      text: 'Pets allowed',
-      type: 'pets',
-    },
-    {
-      text: 'Fridge',
-      type: 'fridge',
-    },
-    {
-      text: `Room’s furniture`,
-      type: 'room-furniture',
-    },
-    {
-      text: 'Television',
-      type: 'television',
-    },
-    {
-      text: 'Shower cabin',
-      type: 'shower',
-    },
-    {
-      text: 'Dishwasher',
-      type: 'dishwasher',
-    },
-    {
-      text: 'Kitchen',
-      type: 'kitchen',
-    },
-    {
-      text: 'Wi Fi',
-      type: 'wifi',
-    },
-    {
-      text: 'Washing machine',
-      type: 'dishwasher',
-    },
-    {
-      text: 'Air conditioner',
-      type: 'air-conditioner',
-    },
-    {
-      text: 'Bash',
-      type: 'bath',
-    },
-  ];
-
   const store = useProductCardStore();
 
-  const { description } = storeToRefs(store);
+  const { description, information, baseProp } = storeToRefs(store);
 </script>
 
 <template>
-  <div class="product-card__block offer-param">
+  <div class="product-card__block">
     <v-list
       class="product-params d-flex justify-space-between text-center pa-0"
     >
       <v-list-item
-        v-for="param in params"
-        :key="param.subtitle"
+        v-for="param in baseProp"
+        :key="param[1].title"
         class="pr-4 pr-md-0 pa-0"
       >
-        <v-list-item-title class="text-center"
-          >{{ param.title }}<sup>{{ param.sup }}</sup></v-list-item-title
-        >
+        <v-list-item-title class="text-center">{{
+          param[1].value
+        }}</v-list-item-title>
         <v-list-item-subtitle class="text-center">{{
-          param.subtitle
+          param[1].title
         }}</v-list-item-subtitle>
       </v-list-item>
     </v-list>
@@ -130,13 +53,13 @@
       <v-list-item
         min-height="25"
         class="text-dark"
-        v-for="infoItem in info"
-        :key="infoItem.text"
+        v-for="infoItem in information"
+        :key="infoItem[1].title"
       >
         <template v-slot:prepend>
-          <information-icon :type="infoItem.type" />
+          <information-icon :type="infoItem[1].title" />
         </template>
-        <v-list-item-title>{{ infoItem.text }}</v-list-item-title>
+        <v-list-item-title>{{ infoItem[1].title }}</v-list-item-title>
       </v-list-item>
     </v-list>
   </div>
