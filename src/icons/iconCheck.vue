@@ -1,11 +1,11 @@
 <script setup>
   defineProps({
-    checked: Boolean,
+    checked: String,
   });
 </script>
 
 <template>
-  <template v-if="checked">
+  <template v-if="checked === 'on'">
     <svg
       width="8"
       height="6"

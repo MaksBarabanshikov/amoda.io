@@ -1,6 +1,5 @@
 <script setup>
   import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel';
-  import slideExample from '@/assets/img/image/slider-example.jpg';
   import IconArrow from '@/icons/IconArrow.vue';
   import ImageControl from '@/components/MyCarousel/ImageControl.vue';
   import { reactive, ref } from 'vue';
@@ -38,7 +37,21 @@
       class="rounded-10 overflow-hidden"
       :key="slide"
     >
-      <v-img :src="slideExample" />
+      <v-img
+        v-if="slide.mime === 'image/jpeg'"
+        style="height: 500px"
+        :src="slide.src"
+        cover
+      />
+      <div style="height: 500px" class="video-slider">
+        <video
+          v-if="slide.mime === 'video/mp4'"
+          class="w-100 h-100 rounded-10"
+          controls
+        >
+          <source :src="slide.src" :type="slide.mime" />
+        </video>
+      </div>
     </slide>
     <template #addons>
       <navigation>

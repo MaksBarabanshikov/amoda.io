@@ -1,67 +1,68 @@
 <script setup>
   import { ref } from 'vue';
   import IconCheck from '@/icons/iconCheck.vue';
+  // import IconCheck from '@/icons/iconCheck.vue';
 
   const tab = ref(null);
 
   defineProps({
-    tabItem: Array,
+    tabData: Object,
   });
 
-  const tabData = [
-    {
-      value: 'Interior Properties',
-      title: 'Interior Properties',
-    },
-    {
-      value: 'Nearliness',
-      title: 'Nearliness',
-    },
-    {
-      value: 'Transportation',
-      title: 'Transportation',
-    },
-    {
-      value: 'Transportation2',
-      title: 'Transportation',
-    },
-    {
-      value: 'Accessible Housing',
-      title: 'Accessible Housing',
-    },
-    {
-      value: 'Accessible Housing2',
-      title: 'Accessible Housing',
-    },
-  ];
+  // const tabData = [
+  //   {
+  //     value: 'Interior Properties',
+  //     title: 'Interior Properties',
+  //   },
+  //   {
+  //     value: 'Nearliness',
+  //     title: 'Nearliness',
+  //   },
+  //   {
+  //     value: 'Transportation',
+  //     title: 'Transportation',
+  //   },
+  //   {
+  //     value: 'Transportation2',
+  //     title: 'Transportation',
+  //   },
+  //   {
+  //     value: 'Accessible Housing',
+  //     title: 'Accessible Housing',
+  //   },
+  //   {
+  //     value: 'Accessible Housing2',
+  //     title: 'Accessible Housing',
+  //   },
+  // ];
 </script>
 
 <template>
   <v-card class="my-tab">
     <v-tabs grow v-model="tab" bg-color="#F4F4F4">
-      <template v-for="tabItem in tabData" :key="tabItem.value">
-        <v-tab :value="tabItem.value">{{ tabItem.title }}</v-tab>
+      <template v-for="(value, key) in tabData" :key="key">
+        <v-tab :value="key">{{ key }}</v-tab>
       </template>
     </v-tabs>
     <v-card-text>
       <v-window v-model="tab">
-        <template v-for="tabTitle in tabData" :key="tabTitle.value">
-          <v-window-item :value="tabTitle.value">
-            <h2 class="product-card__block-title">{{ tabTitle.title }}</h2>
+        <template v-for="(value, key) in tabData" :key="key">
+          <v-window-item :value="key">
+            <h2 class="product-card__block-title">{{ key }}</h2>
             <v-list class="grid grid-cols-4">
               <v-list-item
                 min-height="25"
                 class="text-dark"
-                v-for="content in tabItem"
-                :key="content"
+                v-for="(value, key) in value"
+                :key="key"
               >
                 <v-list-item-title class="d-flex align-center">
                   <span>
-                    {{ content.text }}
+                    {{ key }}
                   </span>
                   <v-spacer class="dotted" />
                   <div class="icon">
-                    <IconCheck :checked="content.checked" />
+                    <IconCheck :checked="value" />
                   </div>
                 </v-list-item-title>
               </v-list-item>

@@ -5,7 +5,7 @@
 </script>
 
 <template>
-  <template v-if="type === 'pram'">
+  <template v-if="type === 'Children allowed'">
     <svg
       width="13"
       height="14"
@@ -19,7 +19,7 @@
       />
     </svg>
   </template>
-  <template v-if="type === 'television'">
+  <template v-if="type === 'Television'">
     <svg
       width="15"
       height="14"
@@ -43,7 +43,7 @@
       />
     </svg>
   </template>
-  <template v-if="type === 'pets'">
+  <template v-if="type === 'Pets allowed'">
     <svg
       width="15"
       height="12"
@@ -73,7 +73,7 @@
       />
     </svg>
   </template>
-  <template v-if="type === 'fridge'">
+  <template v-if="type === 'Fridge'">
     <svg
       width="13"
       height="15"
@@ -87,7 +87,7 @@
       />
     </svg>
   </template>
-  <template v-if="type === 'room-furniture'">
+  <template v-if="type === 'Room Furniture'">
     <svg
       width="15"
       height="15"
@@ -101,7 +101,7 @@
       />
     </svg>
   </template>
-  <template v-if="type === 'shower'">
+  <template v-if="type === 'Shower'">
     <svg
       width="14"
       height="14"
@@ -127,7 +127,7 @@
       />
     </svg>
   </template>
-  <template v-if="type === 'dishwasher'">
+  <template v-if="type === 'Dishwasher'">
     <svg
       width="14"
       height="17"
@@ -152,7 +152,7 @@
       />
     </svg>
   </template>
-  <template v-if="type === 'kitchen'">
+  <template v-if="type === 'Kitchen'">
     <svg
       width="15"
       height="12"
@@ -166,7 +166,7 @@
       />
     </svg>
   </template>
-  <template v-if="type === 'wifi'">
+  <template v-if="type === 'Wifi'">
     <svg
       width="14"
       height="11"
@@ -188,7 +188,7 @@
       />
     </svg>
   </template>
-  <template v-if="type === 'air-conditioner'">
+  <template v-if="type === 'Air Conditioner'">
     <svg
       width="14"
       height="16"
@@ -247,7 +247,7 @@
       />
     </svg>
   </template>
-  <template v-if="type === 'bath'">
+  <template v-if="type === 'Bath'">
     <svg
       width="15"
       height="14"

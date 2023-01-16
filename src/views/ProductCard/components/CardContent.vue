@@ -3,105 +3,18 @@
   import MyCarousel from '@/components/MyCarousel/MyCarousel.vue';
   import TextBlock from '@/views/ProductCard/components/TextBlock.vue';
   import MyTabs from '@/components/MyTabs/MyTabs.vue';
+  import { storeToRefs } from 'pinia';
+  import { useProductCardStore } from '@/store/productCardStore.js';
 
-  const colors = [
-    'indigo',
-    'warning',
-    'pink darken-2',
-    'red lighten-1',
-    'deep-purple accent-4',
-  ];
+  const store = useProductCardStore();
 
-  const slides = ['First', 'Second', 'Third', 'Fourth', 'Fifth', 'Fifth'];
-
-  const tabItem = [
-    {
-      text: 'Amusement  Center',
-      checked: true,
-    },
-    {
-      text: 'Cemevi',
-      checked: true,
-    },
-    {
-      text: 'Church',
-      checked: true,
-    },
-    {
-      text: 'City Center',
-      checked: false,
-    },
-    {
-      text: 'Fair',
-      checked: false,
-    },
-    {
-      text: 'Fire Departmant',
-      checked: true,
-    },
-    {
-      text: 'Grocery',
-      checked: true,
-    },
-    {
-      text: 'Cemevi',
-      checked: false,
-    },
-    {
-      text: 'Amusement  Center',
-      checked: true,
-    },
-    {
-      text: 'Cemevi',
-      checked: true,
-    },
-    {
-      text: 'Amusement  Center',
-      checked: true,
-    },
-    {
-      text: 'Cemevi',
-      checked: true,
-    },
-    {
-      text: 'Church',
-      checked: true,
-    },
-    {
-      text: 'City Center',
-      checked: true,
-    },
-    {
-      text: 'Fair',
-      checked: true,
-    },
-    {
-      text: 'Fire Departmant',
-      checked: true,
-    },
-    {
-      text: 'Grocery',
-      checked: true,
-    },
-    {
-      text: 'Cemevi',
-      checked: true,
-    },
-    {
-      text: 'Amusement  Center',
-      checked: true,
-    },
-    {
-      text: 'Cemevi',
-      checked: true,
-    },
-  ];
+  const { sliderItems, productData } = storeToRefs(store);
 </script>
 <template>
   <v-col class="product-card__content" md="12" lg="9">
-    <my-carousel :colors="colors" :slides="slides" control-image />
+    <my-carousel :slides="sliderItems" control-image />
     <text-block />
-    <my-tabs :tab-item="tabItem" />
+    <my-tabs :tab-data="productData.data.features" />
     <div class="product-card__map mb-0">
       <v-img :src="mapImage" />
     </div>
